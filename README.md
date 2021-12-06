@@ -9,8 +9,6 @@
 [Konfigurationsvalg af fysisk server](#Konfigurationsvalg-af-fysisk-server)  
 [Konklusion](#Konklusion)
 
-======
-
 ## Indledning
 Vi skal opsætte en et netværk, hvor det er en server og en klient på netværket. Serveren skal have nogle roller;
 Active Directory (Domain Controller)
