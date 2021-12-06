@@ -25,5 +25,5 @@
 ## Adgangskoder
 ======
 
-## konfigurationsvalg af fysisk server
+## Konfigurationsvalg af fysisk server
 ======
