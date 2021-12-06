@@ -28,7 +28,7 @@ Skærmbillede fra Packet Tracer…
 ======
 
 ## Hardware og software specifikationer
-Hardware specifikationer
+
 ### Server
 OS: Windows Server 2022
 Enhed: MooseServer
