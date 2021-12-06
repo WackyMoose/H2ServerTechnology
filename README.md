@@ -41,6 +41,8 @@ RAM: 4GB
 Storage: 128GB
 
 ## Bruger Tabel
+<details><summary>Bruger Tabel</summary>
+<p>
 | Enhed           | OU                              | Brugernavn    | Adgangskode |
 | --------------- | ------------------------------- | -----------   | ----------- |
 | MooseServer     | Users/                          | Administrator | DataIT2021! |
@@ -52,7 +54,8 @@ Storage: 128GB
 | AD konto        | servertek/Users/Designer/       | Des1          | DataIT2021! |
 | AD konto        | servertek/Users/Designer/       | Des2          | DataIT2021! |
 | AD konto        | servertek/Users/Administration/ | admin         | DataIT2021! |
-
+</p>
+</details>
 ## Konfigurationsvalg af fysisk server
 Vi har ændret navnet på serveren til MooseServer, fordi vi ville have et Moose tema :)
 
