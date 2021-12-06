@@ -5,7 +5,7 @@
 [Netværksdiagram](#Netværksdiagram)  
 [Interface og IP-adresse tabel](#Interface-og-IP-adresse-tabel)  
 [Hardware og software specifikationer](#Hardware-og-software-specifikationer)  
-[Bruger Tabel](#Bruger-tabel)
+[Bruger Tabel](#Bruger-tabel)  
 [Konfigurationsvalg af fysisk server](#Konfigurationsvalg-af-fysisk-server)  
 [Konklusion](#Konklusion)
 
