@@ -6,7 +6,6 @@
 [Interface og IP-adresse tabel](#Interface-og-IP-adresse-tabel)  
 [Hardware og software specifikationer](#Hardware-og-software-specifikationer)  
 [Bruger Tabel](#Bruger-tabel)
-[Adgangskoder](#Adgangskoder)  
 [Konfigurationsvalg af fysisk server](#Konfigurationsvalg-af-fysisk-server)  
 [Konklusion](#Konklusion)
 
@@ -44,14 +43,17 @@ RAM: 4GB
 Storage: 128GB
 
 ## Bruger Tabel
-| Enhed           | OU                      | Brugernavn    | Adgangskode |
-| --------------- | ----------------------- | -----------   | ----------- |
-| MooseServer     | Users/                  | Administrator | DataIT2021! |
-| Moose01         | centered                | PC-01         | DataIT2021! |
-| AD konto        | servertek/Users/DevOps/ | Ops1          | DataIT2021! |
-
-## Adgangskoder
-======
+| Enhed           | OU                              | Brugernavn    | Adgangskode |
+| --------------- | ------------------------------- | -----------   | ----------- |
+| MooseServer     | Users/                          | Administrator | DataIT2021! |
+| Moose01         | centered                        | PC-01         | DataIT2021! |
+| AD konto        | servertek/Users/DevOps/         | Ops1          | DataIT2021! |
+| AD konto        | servertek/Users/DevOps/         | Ops2          | DataIT2021! |
+| AD konto        | servertek/Users/Developers/     | Dev1          | DataIT2021! |
+| AD konto        | servertek/Users/Developers/     | Dev2          | DataIT2021! |
+| AD konto        | servertek/Users/Designer/       | Des1          | DataIT2021! |
+| AD konto        | servertek/Users/Designer/       | Des2          | DataIT2021! |
+| AD konto        | servertek/Users/Administration/ | admin         | DataIT2021! |
 
 ## Konfigurationsvalg af fysisk server
 Vi har ændret navnet på serveren til MooseServer, fordi vi ville have et Moose tema :)
