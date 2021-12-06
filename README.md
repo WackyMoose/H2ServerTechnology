@@ -11,23 +11,24 @@
 
 <a name="Indledning"/>
 ## Indledning
-
+======
 
 <a name="Netværksdiagram"/>
 ## Netværksdiagram
-
+======
 
 <a name="InterfaceIPadressetabel"/>
 ## Interface- og IP-adresse tabel
-
+======
 
 <a name="Hardwaresoftwarespecifikationer"/>
 ## Hardware- og software specifikationer
-
+======
 
 <a name="Adgangskoder"/>
 ## Adgangskoder
-
+======
 
 <a name="Konfigurationsvalg"/>
 ## Konfigurationsvalg af fysisk server
+======
