@@ -58,6 +58,7 @@ Storage: 128GB
 
 </p>
 </details>
+
 ## Konfigurationsvalg af fysisk server
 Vi har ændret navnet på serveren til MooseServer, fordi vi ville have et Moose tema :)
 
