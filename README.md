@@ -5,6 +5,7 @@
 [Netværksdiagram](#Netværksdiagram)  
 [Interface og IP-adresse tabel](#Interface-og-IP-adresse-tabel)  
 [Hardware og software specifikationer](#Hardware-og-software-specifikationer)  
+[Bruger Tabel](#Bruger-tabel)
 [Adgangskoder](#Adgangskoder)  
 [Konfigurationsvalg af fysisk server](#Konfigurationsvalg-af-fysisk-server)  
 [Konklusion](#Konklusion)
@@ -41,6 +42,13 @@ Enhed: Moose01
 CPU: Intel(R) Core™ 2 Duo CPU T9400 @ 2.53Ghz
 RAM: 4GB
 Storage: 128GB
+
+## Bruger Tabel
+| Enhed           | OU                      | Brugernavn    | Adgangskode |
+| --------------- | ----------------------- | -----------   | ----------- |
+| MooseServer     | Users/                  | Administrator | DataIT2021! |
+| Moose01         | centered                | PC-01         | DataIT2021! |
+| AD konto        | servertek/Users/DevOps/ | Ops1          | DataIT2021! |
 
 ## Adgangskoder
 ======
