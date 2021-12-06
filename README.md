@@ -23,12 +23,10 @@ Domain Controlleren skal have et domæne der hedder servertek.local.
 ## Netværksdiagram
 Skærmbillede fra Packet Tracer…
 
-
 ## Interface og IP-adresse tabel
 ======
 
 ## Hardware og software specifikationer
-
 ### Server
 OS: Windows Server 2022
 Enhed: MooseServer
@@ -44,12 +42,13 @@ CPU: Intel(R) Core™ 2 Duo CPU T9400 @ 2.53Ghz
 RAM: 4GB
 Storage: 128GB
 
-
 ## Adgangskoder
 ======
 
 ## Konfigurationsvalg af fysisk server
-======
+Vi har ændret navnet på serveren til MooseServer, fordi vi ville have et Moose tema :)
+
+Directory Services Restore Mode password (DSRM): DataIT2021!
 
 ## Konklusion
 Vi havde en del problemer med opsætning af Microtic Hex routeren og endte med at bytte den til en Linksys e900. Vi havde en snak med SKP folkene, der fortalte at de fik rigtig mange klager over Microtik routerne.
