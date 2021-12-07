@@ -8,6 +8,7 @@
 [Interface og IP-adresse tabel](#Interface-og-IP-adresse-tabel)  
 [Hardware og software specifikationer](#Hardware-og-software-specifikationer)  
 [Bruger Tabel](#Bruger-tabel)  
+[Sikkerheds Grupper](#Sikkerheds-Grupper)  
 [Konfigurationsvalg af fysisk server](#Konfigurationsvalg-af-fysisk-server)  
 [Konklusion](#Konklusion)
 
@@ -57,6 +58,22 @@ Storage: 128GB
 | AD konto        | servertek/Users/Designer/       | Des1          | DataIT2021! |
 | AD konto        | servertek/Users/Designer/       | Des2          | DataIT2021! |
 | AD konto        | servertek/Users/Administration/ | admin         | DataIT2021! |
+
+</p>
+</details>
+
+## Sikkerheds Grupper
+
+<details><summary>Sikkerheds Grupper</summary>
+<p>
+  
+| OU                             | Navn                            |
+| ------------------------------ | ------------------------------- |
+| servertek/Users                | FolderRedirectionUsers          |
+| servertek/Users/Administration | Administration                  |
+| servertek/Users/Designer       | Designer                        |
+| servertek/Users/Developer      | Developer                       |
+| servertek/Users/DevOps         | DevOps                          |
 
 </p>
 </details>
