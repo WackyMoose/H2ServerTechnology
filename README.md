@@ -10,6 +10,7 @@
 [Bruger Tabel](#Bruger-tabel)  
 [Sikkerheds Grupper](#Sikkerheds-Grupper)  
 [Konfigurationsvalg af fysisk server](#Konfigurationsvalg-af-fysisk-server)  
+[Sekundær DNS server](#Sekundær-DNS-server)
 [Konklusion](#Konklusion)
 
 ## Indledning
@@ -82,6 +83,13 @@ Storage: 128GB
 Vi har ændret navnet på serveren til MooseServer, fordi vi ville have et Moose tema :)
 
 Directory Services Restore Mode password (DSRM): DataIT2021!
+
+## Sekundær DNS server
+“Beskriv hvorledes man opsættes yderligere én server, der skal fungere som sekundær DNS-server. Serveren kaldes DevDNS. Den sekundære DNS-server skal indeholde en subdomainzone der kaldes dev.servertek.local, ligeledes beskrives hvorledes man opretter en DNS-delegering til dev.servertek.local på den primære domain-server.”
+
+Den sekundære server sættes op med Windows Server 2022, og der installeres DNS server som på den primære server. Serveren navngives DevDNS.
+
+På den primære server skal DNS zone transfer slås til: I DNS manager, højreklik på det primære domæne (servertek.local) og vælge Zone transfer fanen. Sæt flueben ved Allow zone transfer og vælg Only to the following server, hvorefter den statiske IP adresse til den sekundære server indtastes.
 
 ## Konklusion
 Vi havde en del problemer med opsætning af Microtic Hex routeren og endte med at bytte den til en Linksys e900. Vi havde en snak med SKP folkene, der fortalte at de fik rigtig mange klager over Microtik routerne.
