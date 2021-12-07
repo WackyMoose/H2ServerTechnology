@@ -11,6 +11,7 @@
 [Sikkerheds Grupper](#Sikkerheds-Grupper)  
 [Konfigurationsvalg af fysisk server](#Konfigurationsvalg-af-fysisk-server)  
 [Sekundær DNS server](#Sekundær-DNS-server)  
+[Forklaring af DDNS-NetBIOS-WINS-LLMNR](#Forklaring-af-DDNS-NetBIOS-WINS-LLMNR)
 [Konklusion](#Konklusion)
 
 ## Indledning
@@ -90,6 +91,19 @@ Directory Services Restore Mode password (DSRM): DataIT2021!
 Den sekundære server sættes op med Windows Server 2022, og der installeres DNS server som på den primære server. Serveren navngives DevDNS.
 
 På den primære server skal DNS zone transfer slås til: I DNS manager, højreklik på det primære domæne (servertek.local) og vælge Zone transfer fanen. Sæt flueben ved Allow zone transfer og vælg Only to the following server, hvorefter den statiske IP adresse til den sekundære server indtastes.
+
+## Forklaring af DDNS-NetBIOS-WINS-LLMNR
+### DDNS
+Dynamic Domain Name System (DDNS) er en dynamisk DNS der selv opdaterer DNSen ved at lytte efter IP adresse ændringer, derefter går den selv ind og opdatere DNSen.
+
+### NetBIOS
+Network Basic Input/Output System (NetBIOS) er en API der hjælper computer med at kommunikere over LAN, den tilbyder nogle services til Bl.a. name service.
+
+### WINS
+Windows Internet Name Service (WINS)
+
+### LLMNR
+Link-Local Multicast Name Resolution (LLMNR), er en protokol der er baseret på DNS packet format, dette gør det muligt for både IPv4 og IPv6 at oversætte navne til IP adresser uden en DNS server.
 
 ## Konklusion
 Vi havde en del problemer med opsætning af Microtic Hex routeren og endte med at bytte den til en Linksys e900. Vi havde en snak med SKP folkene, der fortalte at de fik rigtig mange klager over Microtik routerne.
