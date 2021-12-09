@@ -37,7 +37,7 @@ Domain Controlleren skal have et domæne der hedder servertek.local.
 
 ## Netværksdiagram
 Skærmbillede fra Packet Tracer…
-![NetværksDiagram](https://https://github.com/WackyMoose/H2ServerTechnology/main/NetværksDiagram.png)
+![NetværksDiagram](https://https://github.com/WackyMoose/H2ServerTechnology/blob/main/NetværksDiagram.png)
 
 ## Interface og IP-adresse tabel
 <details><summary>Adresse tabel</summary>
