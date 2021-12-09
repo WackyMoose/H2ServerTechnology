@@ -3,7 +3,7 @@
 ### Serverteknologi opgave af Victor, Michael, Pierre - 21hf43dat2pV - 10/12/2021
 
 ##### Table of Contents  
-1. [Indledning](#Indledning)  
+1. [Opgavebeskrivelse](#Opgavebeskrivelse)  
 2. [Netværksdiagram](#Netværksdiagram)  
 3. [Interface og IP-adresse tabel](#Interface-og-IP-adresse-tabel)  
 4. [Hardware og software specifikationer](#Hardware-og-software-specifikationer)  
@@ -26,14 +26,31 @@
 11. [Konklusion](#Konklusion)  
 12. [Henvisninger](#Henvisninger)  
 
-## Indledning
-Vi skal opsætte en et netværk, hvor det er en server og en klient på netværket. Serveren skal have nogle roller;
+## Opgavebeskrivelse
+Opgavebeskrivelse
+Server
+Der skal opsættes en server og en klient på et lokalt netværk. Følgende betingelser skal være opfyldt:
+
+Microsoft Server 2019 eller nyere.
+Domæne (servertek.local), som styres at en enkelt Domain Controller (DC1).
 Active Directory (Domain Controller)
 DHCP server
 DNS server
-IIS server
-
-Domain Controlleren skal have et domæne der hedder servertek.local.
+ISS server
+Folder redirect for hver bruger på et delt drev
+Mindst tre afdelinger (OU’s) med mindst to brugere pr. afdeling.
+Automatisk backup af alle brugerdata.
+Printserver med print-til-PDF. Kun tilgængelig i normal arbejdstid. Ansatte skal have højere prioritet end gæstebrugere.
+Alle opdateringer styres af WSUS og udføres på et passende tidspunkt.
+En dummy hjemmeside med firmalogo og -navn opsat via ISS
+Beskriv / Forklar
+Beskriv hvordan man opsætter en sekundær DNS server (DevDNS). Den skal indeholde en subdomain zone (dev.servertek.local). Beskriv hvordan man opretter en DNS delegering til subdomain zonen på en primære DNS server.
+Beskriv hvordan man tilgår begge servere via Remote Desktop fra LAN.
+Beskriv begrebet IPSec og hvordan man laver en opkobling over WAN til LAN via en L2TP over IPSec VPN forbindelse opsat med remote access rollen.
+Beskriv hvordan udviklingsafdelingen kan få backend adgang til dummy hjemmesiden via FTP over SSL.
+Beskriv konfigurationsvalg af server.
+Forklar begreberne DDNS, NETBIOS, WINS, og LLMNR.
+Forklar begrebet cloudbaseret serverdrift, uddyb fordele og ulemper.
 
 ## Netværksdiagram
 Skærmbillede fra Packet Tracer…  
