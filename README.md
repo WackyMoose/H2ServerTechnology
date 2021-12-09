@@ -5,9 +5,9 @@
 ##### Table of Contents  
 1. [Indledning](#Indledning)  
 2. [Netværksdiagram](#Netværksdiagram)  
-[Interface og IP-adresse tabel](#Interface-og-IP-adresse-tabel)  
-[Hardware og software specifikationer](#Hardware-og-software-specifikationer)  
-   [Hardware specifikationer]
+3. [Interface og IP-adresse tabel](#Interface-og-IP-adresse-tabel)  
+4. [Hardware og software specifikationer](#Hardware-og-software-specifikationer)  
+    -[Hardware specifikationer]
 [Bruger Tabel](#Bruger-tabel)  
 [Sikkerheds Grupper](#Sikkerheds-Grupper)  
 [Konfigurationsvalg af fysisk server](#Konfigurationsvalg-af-fysisk-server)  
