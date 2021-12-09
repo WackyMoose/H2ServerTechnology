@@ -27,7 +27,7 @@
 12. [Henvisninger](#Henvisninger)  
 
 ## Opgavebeskrivelse
-### Opgavebeskrivelse
+### Server opsætning
 Der skal opsættes en server og en klient på et lokalt netværk. Følgende betingelser skal være opfyldt:  
 - Microsoft Server 2019 eller nyere.
 - Domæne (servertek.local), som styres at en enkelt Domain Controller (DC1).
