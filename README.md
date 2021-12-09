@@ -10,7 +10,7 @@
    - [Hardware Specifikationer](#Hardware-Specifikationer)  
      - [Server](#Server)  
      - [Router](#Router)  
-     - [Klient Computer](#Klient-Computer)
+     - [Klient Computer](#Klient-Computer)   
 [Bruger Tabel](#Bruger-tabel)  
 [Sikkerheds Grupper](#Sikkerheds-Grupper)  
 [Konfigurationsvalg af fysisk server](#Konfigurationsvalg-af-fysisk-server)  
