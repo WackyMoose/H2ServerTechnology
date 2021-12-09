@@ -35,6 +35,10 @@
 12. [Konklusion](#Konklusion)  
 13. [Henvisninger](#Henvisninger)  
 14. [Bilag](#Bilag)
+    - [Opsætning af Router](#Opsætning-af-Router)
+    - [Installation og opsætning af Windows Server 2022](#Installation-og-opsætning-af-Windows-Server-2022)
+    - [Installation og opsætning af DHCP server rolle](#Installation-og-opsætning-af-DHCP-server-rolle)
+    - [Installation og opsætning af Active Directory og DNS server rolle](#Installation-og-opsætning-af-Active-Directory-og-DNS-server-rolle)
 
 ## Opgavebeskrivelse
 ### Server opsætning
@@ -301,3 +305,10 @@ https://www.youtube.com/watch?v=A66835rpTvY
 
 ## Bilag  
 
+### Opsætning af Router  
+
+### Installation og opsætning af Windows Server 2022  
+
+### Installation og opsætning af DHCP server rolle  
+
+### Installation og opsætning af Active Directory og DNS server rolle  
