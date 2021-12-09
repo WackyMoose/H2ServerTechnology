@@ -11,13 +11,12 @@
      - [Server](#Server)  
      - [Router](#Router)  
      - [Klient Computer](#Klient-Computer)   
-
-[Bruger Tabel](#Bruger-tabel)  
-[Sikkerheds Grupper](#Sikkerheds-Grupper)  
-[Konfigurationsvalg af fysisk server](#Konfigurationsvalg-af-fysisk-server)  
-[Sekundær DNS server](#Sekundær-DNS-server)  
-[Forklaring af DDNS-NetBIOS-WINS-LLMNR](#Forklaring-af-DDNS-NetBIOS-WINS-LLMNR)  
-[Konklusion](#Konklusion)
+5. [Bruger Tabel](#Bruger-tabel)  
+6. [Sikkerheds Grupper](#Sikkerheds-Grupper)  
+7. [Konfigurationsvalg af fysisk server](#Konfigurationsvalg-af-fysisk-server)  
+8. [Sekundær DNS server](#Sekundær-DNS-server)  
+9. [Forklaring af DDNS-NetBIOS-WINS-LLMNR](#Forklaring-af-DDNS-NetBIOS-WINS-LLMNR)  
+10. [Konklusion](#Konklusion)
 
 ## Indledning
 Vi skal opsætte en et netværk, hvor det er en server og en klient på netværket. Serveren skal have nogle roller;
