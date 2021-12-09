@@ -58,6 +58,93 @@ CPU: Intel(R) Core™ 2 Duo CPU T9400 @ 2.53Ghz
 RAM: 4GB
 Storage: 128GB
 
+## Installeret server roller
+
+<details><summary>Server Roller</summary>
+   <p>
+      
+| Name                           | Install State                   |
+| ------------------------------ | ------------------------------- |
+| AD-Domain-Services             | Installed                       |
+| DHCP                           | Installed                       |
+| DNS                            | Installed                       |
+| FileAndStorage-Services        | Installed                       |
+| File-Services                  | Installed                       |
+| FS-FileServer                  | Installed                       |
+| FS-Resource-Manager            | Installed                       |
+| Storage-Services               | Installed                       |
+| Print-Services                 | Installed                       |
+| Print-Server                   | Installed                       |
+| Print-Internet                 | Installed                       |
+| Web-Server                     | Installed                       |
+| Web-WebServer                  | Installed                       |
+| Web-Common-Http                | Installed                       |
+| Web-Default-Doc                | Installed                       |
+| Web-Dir-Browsing               | Installed                       |
+| Web-Http-Errors                | Installed                       |
+| Web-Static-Content             | Installed                       |
+| Web-Http-Redirect              | Installed                       |
+| Web-Health                     | Installed                       |
+| Web-Http-Logging               | Installed                       |
+| Web-Log-Libraries              | Installed                       |
+| Web-Request-Monitor            | Installed                       |
+| Web-Http-Tracing               | Installed                       |
+| Web-Performance                | Installed                       |
+| Web-Stat-Compression           | Installed                       |
+| Web-Dyn-Compression            | Installed                       |
+| Web-Security                   | Installed                       |
+| Web-Filtering                  | Installed                       | 
+| Web-Basic-Auth                 | Installed                       |
+| Web-Windows-Auth               | Installed                       |
+| Web-App-Dev                    | Installed                       |
+| Web-Net-Ext45                  | Installed                       |
+| Web-ASP                        | Installed                       |
+| Web-ASP-Net45                  | Installed                       |
+| Web-ISAPI-Ext                  | Installed                       |
+| Web-ISAPI-Filter               | Installed                       |
+| Web-Mgmt-Tools                 | Installed                       |
+| Web-Mgmt-Console               | Installed                       |
+| Web-Mgmt-Compat                | Installed                       |
+| Web-Metabase                   | Installed                       |
+| UpdateServices                 | Installed                       |
+| UpdateServices-WidDB           | Installed                       |
+| UpdateServices-Services        | Installed                       |
+| NET-Framework-45-Features      | Installed                       |
+| NET-Framework-45-Core          | Installed                       |
+| NET-Framework-45-ASPNET        | Installed                       |
+| NET-WCF-Services45             | Installed                       |
+| NET-WCF-HTTP-Activation45      | Installed                       |
+| NET-WCF-TCP-PortSharing45      | Installed                       |
+| GPMC                           | Installed                       |
+| Windows-Defender               | Installed                       |
+| RSAT                           | Installed                       |
+| RSAT-Role-Tools                | Installed                       |
+| RSAT-AD-Tools                  | Installed                       |
+| RSAT-AD-PowerShell             | Installed                       |
+| RSAT-ADDS                      | Installed                       |
+| RSAT-AD-AdminCenter            | Installed                       |
+| RSAT-ADDS-Tools                | Installed                       |
+| UpdateServices-RSAT            | Installed                       |
+| UpdateServices-API             | Installed                       |
+| UpdateServices-UI              | Installed                       |
+| RSAT-DHCP                      | Installed                       |
+| RSAT-DNS-Server                | Installed                       |
+| RSAT-File-Services             | Installed                       |
+| RSAT-FSRM-Mgmt                 | Installed                       |
+| RSAT-Print-Services            | Installed                       |
+| System-DataArchiver            | Installed                       |
+| Windows-Internal-Database      | Installed                       |
+| PowerShellRoot                 | Installed                       |
+| PowerShell                     | Installed                       |
+| WAS                            | Installed                       |
+| WAS-Process-Model              | Installed                       |
+| WAS-Config-APIs                | Installed                       |
+| WoW64-Support                  | Installed                       |
+| XPS-Viewer                     | Installed                       |
+      
+   </p>
+</details>
+
 ## Bruger Tabel
 <details><summary>Bruger Tabel</summary>
 <p>
