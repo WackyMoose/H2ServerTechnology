@@ -61,8 +61,9 @@ Storage: 128GB
 ## Installeret server roller
 
 Powershell command used:
+```Powershell
 Get-WindowsFeature | Where-Object { $_.installState -eq “Installed” } | Format-Table Name,InstallState | More | Out-File -FilePath P:\ServerRoles.txt
-
+```
 <details><summary>Server Roller</summary>
    <p>
       
