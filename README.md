@@ -27,30 +27,29 @@
 12. [Henvisninger](#Henvisninger)  
 
 ## Opgavebeskrivelse
-Opgavebeskrivelse
-Server
-Der skal opsættes en server og en klient på et lokalt netværk. Følgende betingelser skal være opfyldt:
+### Opgavebeskrivelse
+Der skal opsættes en server og en klient på et lokalt netværk. Følgende betingelser skal være opfyldt:  
+- Microsoft Server 2019 eller nyere.
+- Domæne (servertek.local), som styres at en enkelt Domain Controller (DC1).
+- Active Directory (Domain Controller)
+- DHCP server
+- DNS server
+- ISS server
+- Folder redirect for hver bruger på et delt drev
+- Mindst tre afdelinger (OU’s) med mindst to brugere pr. afdeling.
+- Automatisk backup af alle brugerdata.
+- Printserver med print-til-PDF. Kun tilgængelig i normal arbejdstid. Ansatte skal have højere prioritet end gæstebrugere.
+- Alle opdateringer styres af WSUS og udføres på et passende tidspunkt.
+- En dummy hjemmeside med firmalogo og -navn opsat via ISS
 
-Microsoft Server 2019 eller nyere.
-Domæne (servertek.local), som styres at en enkelt Domain Controller (DC1).
-Active Directory (Domain Controller)
-DHCP server
-DNS server
-ISS server
-Folder redirect for hver bruger på et delt drev
-Mindst tre afdelinger (OU’s) med mindst to brugere pr. afdeling.
-Automatisk backup af alle brugerdata.
-Printserver med print-til-PDF. Kun tilgængelig i normal arbejdstid. Ansatte skal have højere prioritet end gæstebrugere.
-Alle opdateringer styres af WSUS og udføres på et passende tidspunkt.
-En dummy hjemmeside med firmalogo og -navn opsat via ISS
-Beskriv / Forklar
-Beskriv hvordan man opsætter en sekundær DNS server (DevDNS). Den skal indeholde en subdomain zone (dev.servertek.local). Beskriv hvordan man opretter en DNS delegering til subdomain zonen på en primære DNS server.
-Beskriv hvordan man tilgår begge servere via Remote Desktop fra LAN.
-Beskriv begrebet IPSec og hvordan man laver en opkobling over WAN til LAN via en L2TP over IPSec VPN forbindelse opsat med remote access rollen.
-Beskriv hvordan udviklingsafdelingen kan få backend adgang til dummy hjemmesiden via FTP over SSL.
-Beskriv konfigurationsvalg af server.
-Forklar begreberne DDNS, NETBIOS, WINS, og LLMNR.
-Forklar begrebet cloudbaseret serverdrift, uddyb fordele og ulemper.
+### Beskriv / Forklar
+- Beskriv hvordan man opsætter en sekundær DNS server (DevDNS). Den skal indeholde en subdomain zone (dev.servertek.local). Beskriv hvordan man opretter en DNS delegering til -subdomain zonen på en primære DNS server.
+- Beskriv hvordan man tilgår begge servere via Remote Desktop fra LAN.
+- Beskriv begrebet IPSec og hvordan man laver en opkobling over WAN til LAN via en L2TP over IPSec VPN forbindelse opsat med remote access rollen.
+- Beskriv hvordan udviklingsafdelingen kan få backend adgang til dummy hjemmesiden via FTP over SSL.
+- Beskriv konfigurationsvalg af server.
+- Forklar begreberne DDNS, NETBIOS, WINS, og LLMNR.
+- Forklar begrebet cloudbaseret serverdrift, uddyb fordele og ulemper.
 
 ## Netværksdiagram
 Skærmbillede fra Packet Tracer…  
