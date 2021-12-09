@@ -29,7 +29,7 @@
     - [NetBIOS](#NetBIOS)  
     - [WINS](#WINS)  
     - [LLMNR](#LLMNR)  
-11. [Forklar: Cloud-baseret serverdrift](#Forklar:-Cloud-baseret-serverdrift)
+11. [Forklar: Cloud-baseret serverdrift](#Forklar-Cloud-baseret-serverdrift)
     - [Fordele](#Fordele)
     - [Ulemper](#Ulemper)
 12. [Konklusion](#Konklusion)  
