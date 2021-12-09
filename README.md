@@ -54,8 +54,8 @@ Skærmbillede fra Packet Tracer…
 | Server          | NIC2                  | 192.168.1.2   | 50-9A-4C-91-D5-1E |
 | Klient          | 1 / default           | dynamisk      | 00-23-7D-00-2C-CC |
 | Router          | WAN (Default gateway) | 192.168.1.1   | 58-EF-68-55-3E-C5 |
-| Router          | LAN (Server)          |               | 58-EF-68-55-3E-C4 |
-| Router          | LAN (Client)          |               | 58-EF-68-55-3E-C4 |
+| Router          | LAN (Server)          | 192.168.1.1   | 58-EF-68-55-3E-C4 |
+| Router          | LAN (Client)          | 192.168.1.1   | 58-EF-68-55-3E-C4 |
 
 </p>
 </details>
