@@ -4,6 +4,8 @@
 
 ##### Table of Contents  
 1. [Opgavebeskrivelse](#Opgavebeskrivelse)  
+   - [Server Opsætning](#Server-Opsætning)  
+   - [Beskriv / Forklar](#Beskriv-/-Forklar)  
 2. [Netværksdiagram](#Netværksdiagram)  
 3. [Interface og IP-adresse tabel](#Interface-og-IP-adresse-tabel)  
 4. [Hardware og software specifikationer](#Hardware-og-software-specifikationer)  
@@ -23,8 +25,16 @@
    - [DNS konfiguration](#DNS-konfiguration)  
 9. [Sekundær DNS server](#Sekundær-DNS-server)  
 10. [Forklaring af DDNS-NetBIOS-WINS-LLMNR](#Forklaring-af-DDNS-NetBIOS-WINS-LLMNR)  
-11. [Konklusion](#Konklusion)  
-12. [Henvisninger](#Henvisninger)  
+    - [DDNS](#DDNS)  
+    - [NetBIOS](#NetBIOS)  
+    - [WINS](#WINS)  
+    - [LLMNR](#LLMNR)  
+11. [Forklar: Cloud-baseret serverdrift](#Forklar:-Cloud-baseret-serverdrift)
+    - [Fordele](#Fordele)
+    - [Ulemper](#Ulemper)
+12. [Konklusion](#Konklusion)  
+13. [Henvisninger](#Henvisninger)  
+14. [Bilag](#Bilag)
 
 ## Opgavebeskrivelse
 ### Server opsætning
@@ -266,6 +276,11 @@ Windows Internet Name Service (WINS) er en service der hjalp windows med at over
 
 ### LLMNR
 Link-Local Multicast Name Resolution (LLMNR), er en protokol der er baseret på DNS packet format, dette gør det muligt for både IPv4 og IPv6 at oversætte navne til IP adresser uden en DNS server.
+
+## Forklar: Cloud-baseret serverdrift
+### Fordele  
+
+### Ulemper  
 
 ## Konklusion
 Vi havde en del problemer med opsætning af Microtic Hex routeren og endte med at bytte den til en Linksys e900. Vi havde en snak med SKP folkene, der fortalte at de fik rigtig mange klager over Microtik routerne.
