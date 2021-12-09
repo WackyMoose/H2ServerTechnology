@@ -32,9 +32,9 @@ Der skal opsættes en server og en klient på et lokalt netværk. Følgende beti
 - Microsoft Server 2019 eller nyere.
 - Domæne (servertek.local), som styres at en enkelt Domain Controller (DC1).
 - Active Directory (Domain Controller)
-- DHCP server
-- DNS server
-- ISS server
+- DHCP serverrolle
+- DNS serverrolle
+- ISS serverrolle
 - Folder redirect for hver bruger på et delt drev
 - Mindst tre afdelinger (OU’s) med mindst to brugere pr. afdeling.
 - Automatisk backup af alle brugerdata.
