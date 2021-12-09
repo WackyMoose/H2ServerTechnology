@@ -262,7 +262,7 @@ Dynamic Domain Name System (DDNS) er en dynamisk DNS der selv opdaterer DNSen ve
 Network Basic Input/Output System (NetBIOS) er en API der hjælper computer med at kommunikere over LAN, den tilbyder nogle services til Bl.a. name service.
 
 ### WINS
-Windows Internet Name Service (WINS)
+Windows Internet Name Service (WINS) er en service der hjalp windows med at oversætte NetBIOS domæne navne til IP-adresser, da NetBIOS stadig kørte på NetBEUI protokolen, i modsætning til DNS der køre på TCP/IP protokolen, den er senere hen blevet udskiftet med DNS efter Microsoft har ændret i den så NetBIOS kan bruge TCP/IP protokolen.
 
 ### LLMNR
 Link-Local Multicast Name Resolution (LLMNR), er en protokol der er baseret på DNS packet format, dette gør det muligt for både IPv4 og IPv6 at oversætte navne til IP adresser uden en DNS server.
