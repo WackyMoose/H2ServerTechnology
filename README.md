@@ -11,12 +11,20 @@
      - [Server](#Server)  
      - [Router](#Router)  
      - [Klient Computer](#Klient-Computer)   
-5. [Bruger Tabel](#Bruger-tabel)  
-6. [Sikkerheds Grupper](#Sikkerheds-Grupper)  
-7. [Konfigurationsvalg af fysisk server](#Konfigurationsvalg-af-fysisk-server)  
-8. [Sekundær DNS server](#Sekundær-DNS-server)  
-9. [Forklaring af DDNS-NetBIOS-WINS-LLMNR](#Forklaring-af-DDNS-NetBIOS-WINS-LLMNR)  
-10. [Konklusion](#Konklusion)
+ 
+5. [Installeret server roller](#Installeret-server-roller)
+6. [Bruger Tabel](#Bruger-tabel)  
+7. [Sikkerheds Grupper](#Sikkerheds-Grupper)  
+8. [Konfigurationsvalg af fysisk server](#Konfigurationsvalg-af-fysisk-server)  
+   - [Server konfigurationer](#Server-konfigurationer)  
+   - [Active Directory konfigurationer](#Active-Directory-konfigurationer)  
+   - [DHCP konfigurationer](#DHCP-konfigurationer)  
+   - [WSUS konfiguration](#WSUS-konfiguration)  
+   - [DNS konfiguration](#DNS-konfiguration)  
+9. [Sekundær DNS server](#Sekundær-DNS-server)  
+10. [Forklaring af DDNS-NetBIOS-WINS-LLMNR](#Forklaring-af-DDNS-NetBIOS-WINS-LLMNR)  
+11. [Konklusion](#Konklusion)  
+12. [Henvisninger](#Henvisninger)  
 
 ## Indledning
 Vi skal opsætte en et netværk, hvor det er en server og en klient på netværket. Serveren skal have nogle roller;
@@ -86,9 +94,25 @@ Storage: 128GB
 </details>
 
 ## Konfigurationsvalg af fysisk server
-Vi har ændret navnet på serveren til MooseServer, fordi vi ville have et Moose tema :)
+### Server konfigurationer
+Vi har ændret navnet på serveren til MooseServer, fordi vi ville have et Moose tema.
+Vi har givet serveren en statisk IP adresse, som er 192.168.1.2.
 
+### Active Directory konfigurationer
+Vores domæne i vores Active Directory hedder servertek.local. 
 Directory Services Restore Mode password (DSRM): DataIT2021!
+Vi har konfigureret en række gruppepolitikker for folder redirection og netværksdrev til hver afdeling, 
+
+### DHCP konfigurationer
+Vi har oprettet et scope med navnet servertek med start IP 192.168.1.1 og slut IP 192.168.1.254. Grunden til at vi ikke har scope fra 192.168.1.0 til 192.168.1.255, er fordi at .0 er vores netværks adresse, og .255 er broadcast adressen i vores scope. Vi har oprettet en eksklusion fra 192.168.1 til 192.168.10. Vi har valgt dette scope, så der er plads til nye servere (192.168.1.3/4/5 osv.), og så der er plads i scopet til at ansætte nye medarbejdere. Lease time er sat til 8 timer, da det er en hel arbejdsdag.
+
+I en rigtig virksomhed ville man ikke vælge denne løsning. I stedet ville man lægge servere, administration og hver afdeling i sit eget V-LAN/subnet.
+Scopet udsender information om IP adressen til default gateway og DNS server, samt DNS Domain name. 
+
+### WSUS konfiguration
+
+### DNS konfiguration
+Forwarders er sat til at være 8.8.8.8 (Googles DNS) og 1.1.1.1, 
 
 ## Sekundær DNS server
 “Beskriv hvorledes man opsættes yderligere én server, der skal fungere som sekundær DNS-server. Serveren kaldes DevDNS. Den sekundære DNS-server skal indeholde en subdomainzone der kaldes dev.servertek.local, ligeledes beskrives hvorledes man opretter en DNS-delegering til dev.servertek.local på den primære domain-server.”
