@@ -288,11 +288,11 @@ I dag findes der en hastigt voksende mængde af cloudbaserede services, der tilb
 F.eks. er det ikke længere almindeligt at have en fysisk mail-server stående hjemme eller på virksomheden, fordi den service i dag ligger i skyen som en cloud service.
 Eksempler på populære cloud-serviceudbydere kunne være Amazon Web Services, Microsoft Azure og Google Cloud, men der findes mange flere, og antallet af service-udbydere vokser hastigt.  
 Cloud services falder i nogle få hovedkategorier:  
-#### Infrastructure as a service (IaaS)  
+### Infrastructure as a service (IaaS)  
 Tidligere var virksomheder nødt til at opsætte fysiske servere og klienter i et lokalt netværk af routere og switches, hvilket medførte udgifter til plads, strøm, nettrafik og løbende vedligeholdelse og skalering. I dag vælger mange at bruge IaaS i stedet, hvilket vil sige, at hele virksomhedens infrastruktur ligger tilgængeligt virtuelt i skyen. Brugeren skal ikke forholde sig til tekniske problemer eller vedligehold, det klarer cloudservicens medarbejdere.
-#### Platform as a service (PaaS) / Serverless
+### Platform as a service (PaaS) / Serverless
 PaaS tilbyder kunderne en web-platform, hvor de hurtigt kan komme i gang med at udvikle software, websites eller apps uden at skulle bekymre sig om opsætning og konfigurering af udviklingsmiljøet. Serviceudbyderen sørger for opsætning og skalering af hardware, så kunden kan fokusere på at udvikle.
-#### Software as a service (SaaS)  
+### Software as a service (SaaS)  
 Tidligere installerede man software lokalt på sin PC via et fysisk medie som f.eks. en diskette eller CD-ROM, man havde købt i en butik. I dag er det mere almindeligt at benytte software som en service, dvs. at man abonnerer på softwaren og betaler pr. brug eller via et månedligt abonnement. Softwaren hentes over nettet og installeres automatisk. Eksempler på software, der tidligere skulle installeres fysisk men som nu er SaaS kunne være Adobe Creative Cloud eller platformen Steam, hvor man kan købe og installere spil over nettet.
 ### Fordele  
 
