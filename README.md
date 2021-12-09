@@ -39,7 +39,19 @@ Domain Controlleren skal have et domæne der hedder servertek.local.
 Skærmbillede fra Packet Tracer…
 
 ## Interface og IP-adresse tabel
-======
+<details><summary>Adresse tabel</summary>
+<p>
+  
+| Enhed           | Port                  | IPv4          | MAC               |
+| --------------- | --------------------- | -----------   | ----------------- |
+| Server          | NIC2                  | 192.168.1.2   | 50-9A-4C-91-D5-1E |
+| Klient          | 1 / default           | dynamisk      | 00-23-7D-00-2C-CC |
+| Router          | WAN (Default gateway) | 192.168.1.1   | 58-EF-68-55-3E-C5 |
+| Router          | LAN (Server)          |               | 58-EF-68-55-3E-C4 |
+| Router          | LAN (Client)          |               | 58-EF-68-55-3E-C4 |
+
+</p>
+</details>
 
 ## Hardware og software specifikationer
 ### Hardware Specifikationer
@@ -150,6 +162,7 @@ Get-WindowsFeature | Where-Object { $_.installState -eq “Installed” } | Form
 </details>
 
 ## Bruger Tabel
+
 <details><summary>Bruger Tabel</summary>
 <p>
   
