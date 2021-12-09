@@ -56,19 +56,21 @@ Skærmbillede fra Packet Tracer…
 ## Hardware og software specifikationer
 ### Hardware Specifikationer
 ### Server
-OS: Windows Server 2022
-Enhed: MooseServer
-CPU: Intel(R) Xeon(R) CPU E3-1220 v6 @ 3.00Ghz
-RAM: 16GB
-Storage: 228GB SSD, 1TB HDD
+OS: Windows Server 2022  
+Enhed: MooseServer  
+CPU: Intel(R) Xeon(R) CPU E3-1220 v6 @ 3.00Ghz  
+RAM: 16GB  
+Storage: 228GB SSD, 1TB HDD  
+
 ### Router
-Enhed: LINKSYS E900
+Enhed: LINKSYS E900  
+
 ### Klient computer
-OS: Windows 10 Pro (21H1, build: 19043.928)
-Enhed: Moose01
-CPU: Intel(R) Core™ 2 Duo CPU T9400 @ 2.53Ghz
-RAM: 4GB
-Storage: 128GB
+OS: Windows 10 Pro (21H1, build: 19043.928)  
+Enhed: Moose01  
+CPU: Intel(R) Core™ 2 Duo CPU T9400 @ 2.53Ghz  
+RAM: 4GB  
+Storage: 128GB  
 
 ## Installeret server roller
 
