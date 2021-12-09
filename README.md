@@ -278,6 +278,10 @@ Windows Internet Name Service (WINS) er en service der hjalp windows med at over
 Link-Local Multicast Name Resolution (LLMNR), er en protokol der er baseret på DNS packet format, dette gør det muligt for både IPv4 og IPv6 at oversætte navne til IP adresser uden en DNS server.
 
 ## Forklar: Cloud-baseret serverdrift
+I dag findes der en hastigt voksende mængde af cloudbaserede services, der kan bruges som alternativ til en fysisk, on-premises server. 
+Eksempler på populære cloud-serviceudbydere kunne være Amazon Web Services, Microsoft Azure og Google Cloud, men der findes mange flere, og antallet af serviceudbydere vokser hastigt.
+
+
 ### Fordele  
 
 ### Ulemper  
