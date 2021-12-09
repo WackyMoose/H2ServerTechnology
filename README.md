@@ -280,12 +280,12 @@ Link-Local Multicast Name Resolution (LLMNR), er en protokol der er baseret på 
 ## Forklar: Cloud-baseret serverdrift
 I dag findes der en hastigt voksende mængde af cloudbaserede services, der tilbyder en bred vifte af produkter. 
 F.eks. er det ikke længere almindeligt at have en fysisk mail-server stående hjemme eller på virksomheden, fordi den service i dag ligger i skyen som en cloud service.
-Eksempler på populære cloud-serviceudbydere kunne være Amazon Web Services, Microsoft Azure og Google Cloud, men der findes mange flere, og antallet af service-udbydere vokser hastigt. 
-Cloud services falder i nogle få hovedkategorier: 
-Infrastructure as a service (IaaS) 
-Platform as a service (PaaS) 
-Serverless 
-Software as a service (SaaS) 
+Eksempler på populære cloud-serviceudbydere kunne være Amazon Web Services, Microsoft Azure og Google Cloud, men der findes mange flere, og antallet af service-udbydere vokser hastigt.  
+Cloud services falder i nogle få hovedkategorier:  
+Infrastructure as a service (IaaS)  
+Platform as a service (PaaS)  
+Serverless  
+Software as a service (SaaS)  
 
 ### Fordele  
 
