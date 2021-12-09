@@ -7,7 +7,7 @@
 2. [Netværksdiagram](#Netværksdiagram)  
 3. [Interface og IP-adresse tabel](#Interface-og-IP-adresse-tabel)  
 4. [Hardware og software specifikationer](#Hardware-og-software-specifikationer)  
-    -[Hardware Specifikationer](#Hardware-Specifikationer)
+   -[Hardware Specifikationer](#Hardware-Specifikationer)  
 [Bruger Tabel](#Bruger-tabel)  
 [Sikkerheds Grupper](#Sikkerheds-Grupper)  
 [Konfigurationsvalg af fysisk server](#Konfigurationsvalg-af-fysisk-server)  
