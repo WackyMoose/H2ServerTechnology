@@ -246,7 +246,7 @@ Link-Local Multicast Name Resolution (LLMNR), er en protokol der er baseret på 
 Vi havde en del problemer med opsætning af Microtic Hex routeren og endte med at bytte den til en Linksys e900. Vi havde en snak med SKP folkene, der fortalte at de fik rigtig mange klager over Microtik routerne.
 
 ## Henvisninger
-Sekundær DNS server
-https://www.youtube.com/watch?v=LmpuiiQ_GS4
-https://www.youtube.com/watch?v=A66835rpTvY
+Sekundær DNS server  
+https://www.youtube.com/watch?v=LmpuiiQ_GS4  
+https://www.youtube.com/watch?v=A66835rpTvY  
 
