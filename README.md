@@ -36,7 +36,8 @@ IIS server
 Domain Controlleren skal have et domæne der hedder servertek.local.
 
 ## Netværksdiagram
-Skærmbillede fra Packet Tracer…
+Skærmbillede fra Packet Tracer…  
+![NetværksDiagram](https://github.com/WackyMoose/H2ServerTechnology/blob/main/NetværksDiagram.png)
 
 ## Interface og IP-adresse tabel
 <details><summary>Adresse tabel</summary>
