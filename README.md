@@ -81,7 +81,7 @@ Storage: 128GB
 
 ## Installeret server roller
 
-Powershell command used:
+Kommando brugt til at fremkalde tabellen:
 ```Powershell
 Get-WindowsFeature | Where-Object { $_.installState -eq “Installed” } | Format-Table Name,InstallState | More | Out-File -FilePath P:\ServerRoles.txt
 ```
