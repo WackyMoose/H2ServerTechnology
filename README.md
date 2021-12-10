@@ -22,21 +22,24 @@
    - [DHCP konfigurationer](#DHCP-konfigurationer)  
    - [WSUS konfiguration](#WSUS-konfiguration)  
    - [DNS konfiguration](#DNS-konfiguration)  
-9. [Sekundær DNS server](#Sekundær-DNS-server)  
-10. [Forklaring af DDNS-NetBIOS-WINS-LLMNR](#Forklaring-af-DDNS-NetBIOS-WINS-LLMNR)  
+9. [Beskriv: Sekundær DNS server](#Beskriv-Sekundær-DNS-server)  
+10. [Beskriv: Remote Desktop adgang til serverne](#Beskriv-Remote-Desktop-adgang-til-serverne)  
+11. [Beskriv: VPN opsætning til hjemmearbejdsplads](#Beskriv-VPN-opsætning-til-hjemmearbejdsplads)  
+12. [Beskriv: Adgang til website med FTP over SSL](#Beskriv-Adgang-til-website-med-FTP-over-SSL)
+13. [Forklaring af DDNS-NetBIOS-WINS-LLMNR](#Forklaring-af-DDNS-NetBIOS-WINS-LLMNR)  
     - [DDNS](#DDNS)  
     - [NetBIOS](#NetBIOS)  
     - [WINS](#WINS)  
     - [LLMNR](#LLMNR)  
-11. [Forklar: Cloud-baseret serverdrift](#Forklar-Cloud-baseret-serverdrift)
+14. [Forklar: Cloud-baseret serverdrift](#Forklar-Cloud-baseret-serverdrift)
     - [Infrastructure as a service (IaaS)](#Infrastructure-as-a-service-IaaS)
     - [Platform as a service (PaaS) / Serverless](#Platform-as-a-service-PaaS--Serverless)
     - [Software as a service (SaaS)  ](#Software-as-a-service-SaaS)
     - [Fordele](#Fordele)
     - [Ulemper](#Ulemper)
-12. [Konklusion](#Konklusion)  
-13. [Henvisninger](#Henvisninger)  
-14. [Bilag](#Bilag)
+15. [Konklusion](#Konklusion)  
+16. [Henvisninger](#Henvisninger)  
+17. [Bilag](#Bilag)
     - [Opsætning af Router](#Opsætning-af-Router)
     - [Installation og opsætning af Windows Server 2022](#Installation-og-opsætning-af-Windows-Server-2022)
     - [Installation og opsætning af DHCP server rolle](#Installation-og-opsætning-af-DHCP-server-rolle)
@@ -259,8 +262,8 @@ Scopet udsender information om IP adressen til default gateway og DNS server, sa
 ### DNS konfiguration
 Forwarders er sat til at være 8.8.8.8 (Googles DNS) og 1.1.1.1, 
 
-## Sekundær DNS server
-“Beskriv hvorledes man opsættes yderligere én server, der skal fungere som sekundær DNS-server. Serveren kaldes DevDNS. Den sekundære DNS-server skal indeholde en subdomainzone der kaldes dev.servertek.local, ligeledes beskrives hvorledes man opretter en DNS-delegering til dev.servertek.local på den primære domain-server.”
+## Beskriv: Sekundær DNS server
+“Beskriv hvorledes man opsættes yderligere én server, der skal fungere som sekundær DNS-server. Serveren kaldes DevDNS. Den sekundære DNS-server skal indeholde en subdomain zone der kaldes dev.servertek.local, ligeledes beskrives hvorledes man opretter en DNS-delegering til dev.servertek.local på den primære domain-server.”
 
 Den sekundære server sættes op med Windows Server 2022, og der installeres DNS server som på den primære server. Serveren navngives DevDNS.
 
@@ -268,7 +271,26 @@ På den primære server, kan man i DNS manager højreklikke på DNS rod-ikonet o
 
 På den primære server skal DNS zone transfer slås til: I DNS manager, højreklik på det primære domæne (servertek.local) og vælge Zone transfer fanen. Sæt flueben ved Allow zone transfer og vælg Only to the following server, hvorefter den statiske IP adresse til den sekundære server indtastes.
 
-På den sekundære server, I DNS manager højreklikkes på mappen DevDns/Forward lookup zones. Vælg New zone og Secondary zone, hvorefter navnet på den nye zone indtastes (dev.servertek.local). Derefter angives master DNS serveren, hvis IP indtastes. Derefter højreklik DevDns/Forward lookup og vælg Transfer from master, hvorefter der hentes en read-only kopi af alle forward adresser fra den primære DNS server.
+På den sekundære server, I DNS manager højreklikkes på mappen DevDns/Forward lookup zones. Vælg New zone og Secondary zone, hvorefter navnet på den nye zone indtastes (dev.servertek.local). Derefter angives master DNS serveren, hvis IP indtastes. Derefter højreklik DevDNS/Forward lookup og vælg Transfer from master, hvorefter der hentes en read-only kopi af alle forward adresser fra den primære DNS server.
+
+## Beskriv: Remote Desktop adgang til serverne
+Inde på Server Manager, under “Local Server”, skal man enable den der hedder “Remote Desktop”. 
+Den knap åbner et nyt vindue, hvor der er en sektion der hedder “Remote Desktop”, du kan vælge at slå det til. Som standard står den til “Don’t allow remote connections to this computer”, hvilket betyder at man ikke kan forbinde sig til den med Remote Desktop.
+
+Tryk på “Allow remote connections to this computer”, for at slå det til. Derefter skal du vælge hvilke brugere/grupper der skal have adgang til at kunne tilgå serveren via Remote Desktop. Derinde ville man normalt lave en gruppe som alle brugerne, der skal have adgang til Remote Desktop, ligger i. 
+
+Derefter kan man teste det ved at gå på klientens computer, og åbne “Remote Desktop Connection“. I det vindue, skal man skrive IP adressen ind på den server man gerne ville tilgå. Her kan man gør det nemt for ens medarbejdere, ved at lave et domænenavn til IP adressen, sådan at man ikke behøver at skulle huske på IP adressen hver gang.
+
+## Beskriv: VPN opsætning til hjemmearbejdsplads
+
+## Beskriv: Adgang til website med FTP over SSL
+Først skal der genereres et certifikat. I IIS manager, klik server certificate ikonet og vælg Create self-signed certificate… i fanen til højre. I fanen Specify Friendly Name, skriv navnet på certifikatet og vælg Web Hosting i drop down menuen1.
+
+Installer serverrollen Web Server (IIS) / FTP Server. I IIS manager, højreklik på websitet og vælg Add FTP publishing… Under fanen Binding and SSL settings, klik radioknappen Require SSL og vælg SSL Certifikatet.
+
+Under Authentication, vælg basic. Under Authorization, vælg Specified roles or user groups, og vælg Developer gruppen. Giv Developer read / write permission. Klik Finish.
+
+På klienten kan medlemmer af Developer gruppen nu tilgå mappen med websitets filer ved at skrive ftp://192.168.1.2/ i file explorer.
 
 ## Forklaring af DDNS-NetBIOS-WINS-LLMNR
 ### DDNS
@@ -284,26 +306,34 @@ Windows Internet Name Service (WINS) er en service der hjalp windows med at over
 Link-Local Multicast Name Resolution (LLMNR), er en protokol der er baseret på DNS packet format, dette gør det muligt for både IPv4 og IPv6 at oversætte navne til IP adresser uden en DNS server.
 
 ## Forklar: Cloud-baseret serverdrift
-I dag findes der en hastigt voksende mængde af cloudbaserede services, der tilbyder en bred vifte af produkter. 
-F.eks. er det ikke længere almindeligt at have en fysisk mail-server stående hjemme eller på virksomheden, fordi den service i dag ligger i skyen som en cloud service.
-Eksempler på populære cloud-serviceudbydere kunne være Amazon Web Services, Microsoft Azure og Google Cloud, men der findes mange flere, og antallet af service-udbydere vokser hastigt.  
-Cloud services falder i nogle få hovedkategorier:  
+I dag findes der en hastigt voksende mængde af cloudbaserede serviceudbydere, der tilbyder en bred vifte af produkter. F.eks. er det ikke længere almindeligt at have en fysisk mail-server stående hjemme eller på virksomheden, fordi den service i dag ligger i skyen som en cloud service. Eksempler på cloud-serviceudbydere kunne være Amazon Web Services, Microsoft Azure og Google Cloud, men der findes mange flere, og antallet af serviceudbydere vokser hastigt.
+
+Cloud services falder i følgende hovedkategorier:
+ 
 ### Infrastructure as a service (IaaS)  
 Tidligere var virksomheder nødt til at opsætte fysiske servere og klienter i et lokalt netværk af routere og switches, hvilket medførte udgifter til plads, strøm, nettrafik og løbende vedligeholdelse og skalering. 
-I dag vælger mange at bruge IaaS i stedet, hvilket vil sige, at hele virksomhedens infrastruktur ligger tilgængeligt virtuelt i skyen. 
-Brugeren skal ikke forholde sig til tekniske problemer eller vedligehold, det klarer cloudservicens medarbejdere.
+I dag vælger mange at bruge cloudbaseret serverdrift eller IaaS i stedet, hvilket vil sige, at hele virksomhedens infrastruktur ligger tilgængeligt virtuelt i skyen. Brugeren skal ikke forholde sig til tekniske problemer, skalering eller vedligehold, det klarer cloudservicens medarbejdere.
 ### Platform as a service (PaaS) / Serverless
-PaaS tilbyder kunderne en web-platform, hvor de hurtigt kan komme i gang med at udvikle software, websites eller apps uden at skulle bekymre sig om opsætning og konfigurering af udviklingsmiljøet. Serviceudbyderen sørger for opsætning og skalering af hardware, så kunden kan fokusere på at udvikle.
+PaaS tilbyder kunderne en web-platform, hvor de hurtigt kan komme i gang med at udvikle software, websites eller apps uden at skulle bekymre sig om opsætning og konfigurering af udviklingsmiljøet. 
+Kunden kan behandle store filer og benytte CPU- og RAM-krævende software på en lille laptop, da alt det tunge computing arbejde foregår i skyen. Service- udbyderen sørger for opsætning og skalering af hardware, så kunden kan fokusere på at udvikle.
 ### Software as a service (SaaS)  
-Tidligere installerede man software lokalt på sin PC via et fysisk medie som f.eks. en diskette eller CD-ROM, man havde købt i en butik. 
-I dag er det mere almindeligt at benytte software som en service, dvs. at man abonnerer på softwaren og betaler pr. brug eller via et månedligt abonnement. 
-Softwaren hentes over nettet og installeres automatisk. 
-Eksempler på software, der tidligere skulle installeres fysisk men som nu er SaaS kunne være Adobe Creative Cloud eller platformen Steam, hvor man kan købe og installere spil over nettet.
+Tidligere installerede man software lokalt på PC’en via et fysisk medie som f.eks. en diskette eller CD-ROM, som man havde købt i en butik. 
+I dag er det mere almindeligt at benytte SaaS, dvs. at man abonnerer på adgang til softwaren og betaler pr. brug eller via et månedligt abonnement. 
+Softwaren hentes over nettet og installeres og opdateres automatisk. 
+Eksempler på software, der tidligere skulle installeres fysisk men som nu er SaaS kunne være Adobe Photoshop, der i dag er en del af Creative Cloud, eller platformen Steam, hvor man kan købe og installere spil over nettet, der tidligere blev solgt på DVD-ROM.
 ### Fordele  
+Man er hurtigt i gang. Det kræver kun en subscription og nogle museklik at opsætte en virtuel cloud infrastruktur, som det ville tage lang tid at opsætte fysisk.
+
+Fleksibel skalering. Det er nemt at skalere sin infrastruktur op (flere CPU kerner, mere RAM, større båndbredde osv.) eller ud (flere virtuelle maskiner).
+
+Ingen hardware. Det kan være meget dyrt og tidskrævende at opsætte og køre et serverrum med køling, og det er dyrt at ansætte IT folk til at vedligeholde serveren. Alt det undgår man ved at vælge en IaaS service.
+
+Nem adgang. Da servicen ligger i skyen kan den tilgås overalt i verden.
 
 ### Ulemper  
-Cloudbaserede løsninger kan være temmeligt dyre i forhold til at have en lokal server.
-Når man har valgt en cloud service, kan det være meget besværligt og tidskrævende at flytte til en anden serviceudbyder.
+Når man først har valgt en cloud service, kan det være meget besværligt og tidskrævende at flytte til en anden serviceudbyder.
+
+Tab af kontrol over data. Når man bruger en cloud service, vil data sandsynligvis blive transporteret på tværs af landegrænser og kontinenter, hvor der gælder forskellig lovgivning omkring datasikkerhed. Derfor kan det blive svært at sikre, at kundernes data ikke tilgås eller sælges til tredjepart.
 
 ## Konklusion
 Vi havde en del problemer med opsætning af Microtic Hex routeren og endte med at bytte den til en Linksys e900. Vi havde en snak med SKP folkene, der fortalte at de fik rigtig mange klager over Microtik routerne.
