@@ -416,3 +416,41 @@ FTP over SSL
 </details> 
 
 ### Opsætning af FTP server med SSL  
+<details><summary>FTP rollen installere gennem Server Manager -> Manage -> Add Roles and Features. Der ligger den under Server Roles og under Web Server (IIS).</summary>
+   <p>
+      
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ServerManager.png)
+
+</p>
+</details>  
+<details><summary>På den side du gerne ville have FTP serveren, skal du højreklikke og tryk på “Add FTP Publishing…”.</summary>
+   <p>
+      
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FTPPublishing.png)
+
+</p>
+</details> 
+<details><summary>Her skal man vælge hvilken IP adresse, FTP serveren skal køre på, man kan også vælge hvilken port det skal køre, men som standard kør det på port 21. Samt vælger det SSL certifikat der blevet lavet tidligere.</summary>
+   <p>
+      
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FTPIP.png)
+
+</p>
+</details> 
+<details><summary>I Authentication vælger vi Basic Authentication
+I Authorization vælger vi “Specified roles or User groups”, og i det input felt der er skriver vi den gruppe, som skal have adgang til FTP serveren, i vores tilfælde er det “Developer” gruppen. Vi giver dem read / write permissions.
+</summary>
+   <p>
+      
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/BasicAuthentication.png)
+
+</p>
+</details> 
+</details> 
+<details><summary>Her kan man se at der er adgang til FTP serveren, og man kan se websites filer.</summary>
+   <p>
+      
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FTPWorking.png)
+
+</p>
+</details> 
