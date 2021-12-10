@@ -356,14 +356,14 @@ FTP over SSL
 
 ## Bilag  
 ### Opsætning af Router  
-Router login interface, koden er admin.
-<details><summary>Networks Diagram</summary>
+<details><summary>Router login interface, koden er admin.</summary>
    <p>
       
 ![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/LoginInterface.png)
 
 </p>
-</details>
+</details>  
+
 ### Installation og opsætning af Windows Server 2022  
 
 ### Installation og opsætning af DHCP server rolle  
