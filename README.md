@@ -44,9 +44,8 @@
 16. [Henvisninger](#Henvisninger)  
 17. [Bilag](#Bilag)
     - [Opsætning af Router](#Opsætning-af-Router)
-    - [Installation og opsætning af Windows Server 2022](#Installation-og-opsætning-af-Windows-Server-2022)
-    - [Installation og opsætning af DHCP server rolle](#Installation-og-opsætning-af-DHCP-server-rolle)
-    - [Installation og opsætning af Active Directory og DNS server rolle](#Installation-og-opsætning-af-Active-Directory-og-DNS-server-rolle)
+    - [Opretning af SSL certifikat](#Opretning-af-SSL-certifikat)
+    - [Opsætning af FTP server med SSL](#Opsætning-af-FTP-server-med-SSL)
 
 ## Opgavebeskrivelse
 ### Server opsætning
@@ -386,8 +385,34 @@ FTP over SSL
 </p>
 </details> 
 
-### Installation og opsætning af Windows Server 2022  
+### Opretning af SSL certifikat    
+<details><summary>Her trykker man på “Server Certificates”.</summary>
+   <p>
+      
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ServerCertificates.png)
 
-### Installation og opsætning af DHCP server rolle  
+</p>
+</details>  
+<details><summary>Tryk på “Create Self-Signed Certificate…” ude i højre side.</summary>
+   <p>
+      
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Self-SignedCertificate.png)
 
-### Installation og opsætning af Active Directory og DNS server rolle  
+</p>
+</details> 
+<details><summary>Her skal man give den et navn, samt vælge hvad type certifikat det skal være.</summary>
+   <p>
+      
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/NameCertificate.png)
+
+</p>
+</details> 
+<details><summary>Her kan man se at “servertek” certifikatet er blevet oprettet.</summary>
+   <p>
+      
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ServerTek.png)
+
+</p>
+</details> 
+
+### Opsætning af FTP server med SSL  
