@@ -363,6 +363,27 @@ FTP over SSL
 
 </p>
 </details>  
+<details><summary>Router login interface, koden er admin.</summary>
+   <p>
+      
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/LoginInterface.png)
+
+</p>
+</details> 
+<details><summary>Router login interface, koden er admin.</summary>
+   <p>
+      
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/LoginInterface.png)
+
+</p>
+</details> 
+<details><summary>Router login interface, koden er admin.</summary>
+   <p>
+      
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/LoginInterface.png)
+
+</p>
+</details> 
 
 ### Installation og opsætning af Windows Server 2022  
 
