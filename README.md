@@ -396,7 +396,7 @@ FTP over SSL
 <details><summary>Tryk på “Create Self-Signed Certificate…” ude i højre side.</summary>
    <p>
       
-![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Self-SignedCertificate.png)
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/SelfSignedCertificate.png)
 
 </p>
 </details> 
