@@ -381,7 +381,7 @@ FTP over SSL
 <details><summary>Her kan man se at NAT er enabled på vores router.</summary>
    <p>
       
-![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/NAT.png)
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Nat.png)
 
 </p>
 </details> 
