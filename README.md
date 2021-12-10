@@ -366,7 +366,7 @@ FTP over SSL
 <details><summary>Her kan man se hvilken MAC adresse WAN interfacet har, samt IP adresse.</summary>
    <p>
       
-![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/LoginInterface.png)
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/MACWan.png)
 
 </p>
 </details> 
@@ -374,14 +374,14 @@ FTP over SSL
    Samt man kan se at DHCP serveren på routeren er disabled</summary>
    <p>
       
-![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/LoginInterface.png)
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/MACLan.png)
 
 </p>
 </details> 
 <details><summary>Her kan man se at NAT er enabled på vores router.</summary>
    <p>
       
-![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/LoginInterface.png)
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/NAT.png)
 
 </p>
 </details> 
