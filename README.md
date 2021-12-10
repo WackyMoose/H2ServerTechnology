@@ -363,21 +363,22 @@ FTP over SSL
 
 </p>
 </details>  
-<details><summary>Router login interface, koden er admin.</summary>
+<details><summary>Her kan man se hvilken MAC adresse WAN interfacet har, samt IP adresse.</summary>
    <p>
       
 ![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/LoginInterface.png)
 
 </p>
 </details> 
-<details><summary>Router login interface, koden er admin.</summary>
+<details><summary>Her kan man se hvilken MAC adresse LAN interfaces har, samt default gateway adressen. 
+   Samt man kan se at DHCP serveren på routeren er disabled</summary>
    <p>
       
 ![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/LoginInterface.png)
 
 </p>
 </details> 
-<details><summary>Router login interface, koden er admin.</summary>
+<details><summary>Her kan man se at NAT er enabled på vores router.</summary>
    <p>
       
 ![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/LoginInterface.png)
