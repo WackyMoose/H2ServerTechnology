@@ -37,7 +37,10 @@
     - [Software as a service (SaaS)  ](#Software-as-a-service-SaaS)
     - [Fordele](#Fordele)
     - [Ulemper](#Ulemper)
-15. [Konklusion](#Konklusion)  
+15. [Konklusion](#Konklusion)
+    - [Server](#Server)  
+    - [Netværk](#Netværk)  
+    - [WSUS](#WSUS)
 16. [Henvisninger](#Henvisninger)  
 17. [Bilag](#Bilag)
     - [Opsætning af Router](#Opsætning-af-Router)
@@ -336,17 +339,31 @@ Når man først har valgt en cloud service, kan det være meget besværligt og t
 Tab af kontrol over data. Når man bruger en cloud service, vil data sandsynligvis blive transporteret på tværs af landegrænser og kontinenter, hvor der gælder forskellig lovgivning omkring datasikkerhed. Derfor kan det blive svært at sikre, at kundernes data ikke tilgås eller sælges til tredjepart.
 
 ## Konklusion
+### Server
+### Netværk
 Vi havde en del problemer med opsætning af Microtic Hex routeren og endte med at bytte den til en Linksys e900. Vi havde en snak med SKP folkene, der fortalte at de fik rigtig mange klager over Microtik routerne.
-
+### WSUS
+Vi har arbejdet intens på at få WSUS til at virke, men efter rigtig mange forsøg og uden held, er det ikke lykkedes os at få det til at fungere. Vi fik 
 ## Henvisninger
-Sekundær DNS server  
-https://www.youtube.com/watch?v=LmpuiiQ_GS4  
-https://www.youtube.com/watch?v=A66835rpTvY  
+Sekundær DNS server
+https://www.youtube.com/watch?v=LmpuiiQ_GS4
+https://www.youtube.com/watch?v=A66835rpTvY
+
+Table of Server Roles
+https://sid-500.com/2017/07/18/windows-server-list-all-installed-roles-and-features-using-powershell/ 
+
+FTP over SSL
 
 ## Bilag  
-
 ### Opsætning af Router  
+Router login interface, koden er admin.
+<details><summary>Networks Diagram</summary>
+   <p>
+      
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/LoginInterface.png)
 
+</p>
+</details>
 ### Installation og opsætning af Windows Server 2022  
 
 ### Installation og opsætning af DHCP server rolle  
