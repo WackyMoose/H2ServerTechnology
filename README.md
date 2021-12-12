@@ -50,14 +50,14 @@
     - [Opsætning af Router](#Opsætning-af-Router)
     - [Active Directory opsætning](#Active-Directory-opsætning)
     - [GPO Struktur](#GPO-Struktur)
-    - [DHCP konfiguration](#DHCP-konfiguration)
-    - [DNS konfiguration](#DNS-konfiguration)
+    - [DHCP konfiguration](#DHCP-konfiguration-bilag)
+    - [DNS konfiguration](#DNS-konfiguration-bilag)
     - [IIS Dummy website](#IIS-Dummy-website)
     - [Folder Redirection](#Folder-Redirection)
     - [Afdelings mapper (NTFS og Share rettigheder)](#Afdelings-mapper-NTFS-og-Share-rettigheder)
-    - [Backup løsning](#Backup-løsning)
+    - [Backup løsning](#Backup-løsning-bilag)
     - [Opsætning af Disk Quota](#Opsætning-af-Disk-Quota)
-    - [WSUS Konfiguration](#WSUS-Konfiguration)
+    - [WSUS Konfiguration](#WSUS-Konfiguration-bilag)
     - [WSUS Fejl](#WSUS-Fejl)
     - [Print server](#Print-server)
     - [Opretning af SSL certifikat](#Opretning-af-SSL-certifikat)
@@ -269,7 +269,7 @@ Get-WindowsFeature | Where-Object { $_.installState -eq “Installed” } | Form
 </details>
 
 ## Backup løsning
-Der er opsat Shadow Copy, der løbende genererer sikkerhedskopier af alle brugerens filer på et serverdrev, på samme måde som f.eks. OneDrive eller Dropbox. Sikkerhedskopierne gemmes på serverdrevet UserFolders$, og NTFS-rettighederne bliver også gemt, så admin ikke kan tilgå brugernes data på serverdrevet. [bilag](#Backup-løsning)
+Der er opsat Shadow Copy, der løbende genererer sikkerhedskopier af alle brugerens filer på et serverdrev, på samme måde som f.eks. OneDrive eller Dropbox. Sikkerhedskopierne gemmes på serverdrevet UserFolders$, og NTFS-rettighederne bliver også gemt, så admin ikke kan tilgå brugernes data på serverdrevet. [bilag](#Backup-løsning-Bilag)
 
 ## Konfigurationsvalg af fysisk server
 ### Server konfiguration
@@ -532,7 +532,7 @@ https://www.win2pdf.com/
 </p>
 </details> 
 
-### DHCP konfiguration
+### DHCP konfiguration Bilag
 <details><summary>Installation af DHCP serverrolle gennem Server Manager.</summary>
    <p>
       
@@ -558,7 +558,7 @@ https://www.win2pdf.com/
 </p>
 </details> 
 
-### DNS konfiguration
+### DNS konfiguration Bilag
 </details> 
 <details><summary>På billedet kan man se at hvordan vores DNS server er konfigureret.</summary>
    <p>
@@ -645,7 +645,7 @@ https://www.win2pdf.com/
 </p>
 </details> 
 
-### Backup løsning
+### Backup løsning Bilag
 <details><summary>Her kan man se at vi har sat en Shadow Copy op til at køre på UserFolders$ drevet.</summary>
    <p>
       
@@ -691,7 +691,7 @@ https://www.win2pdf.com/
 </p>
 </details> 
 
-### WSUS Konfiguration
+### WSUS Konfiguration Bilag
 <details><summary>På billedet kan man se at vi vælger at synchronicer fra Microsoft Update.</summary>
    <p>
       
