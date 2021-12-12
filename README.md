@@ -4,7 +4,7 @@
 
 ##### Table of Contents  
 1. [Opgavebeskrivelse](#Opgavebeskrivelse)  
-   - [Server Opsætning](#Server-Opsætning)  
+   - [Infrastruktur med router, server og klient](#Infrastruktur-med-router,-server-og-klient)  
    - [Beskriv / Forklar](#Beskriv-/-Forklar)  
 2. [Netværksdiagram](#Netværksdiagram)  
 3. [Interface og IP-adresse tabel](#Interface-og-IP-adresse-tabel)  
@@ -50,7 +50,7 @@
     - [Opsætning af FTP server med SSL](#Opsætning-af-FTP-server-med-SSL)
 
 ## Opgavebeskrivelse
-### Server opsætning
+### Infrastruktur med router, server og klient
 Der skal opsættes en server og en klient på et lokalt netværk. Følgende betingelser skal være opfyldt:  
 - Microsoft Server 2019 eller nyere.
 - Domæne (servertek.local), som styres at en enkelt Domain Controller (DC1).
