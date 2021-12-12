@@ -4,7 +4,7 @@
 
 ##### Table of Contents  
 1. [Opgavebeskrivelse](#Opgavebeskrivelse)  
-   - [Infrastruktur med router, server og klient](#Infrastruktur-med-router,-server-og-klient)  
+   - [Infrastruktur med router, server og klient](#infrastruktur-med-router-server-og-klient)  
    - [Beskriv / Forklar](#Beskriv-/-Forklar)  
 2. [Netværksdiagram](#Netværksdiagram)  
 3. [Interface og IP-adresse tabel](#Interface-og-IP-adresse-tabel)  
@@ -17,34 +17,35 @@
 5. [Installeret server roller](#Installeret-server-roller)
 6. [Bruger Tabel](#Bruger-tabel)  
 7. [Sikkerheds Grupper](#Sikkerheds-Grupper)  
-8. [Konfigurationsvalg af fysisk server](#Konfigurationsvalg-af-fysisk-server)  
+8. [Backup løsning](#Backup-løsning)
+9. [Konfigurationsvalg af fysisk server](#Konfigurationsvalg-af-fysisk-server)  
    - [Server konfiguration](#Server-konfiguration)  
    - [Active Directory konfiguration](#Active-Directory-konfiguration)  
    - [DHCP konfiguration](#DHCP-konfiguration)  
    - [DNS konfiguration](#DNS-konfiguration)  
    - [File Server Resource Manager Konfiguration](#File-Server-Resource-Manager-Konfiguration)
    - [WSUS konfiguration](#WSUS-konfiguration)  
-9. [Beskriv: Sekundær DNS server](#Beskriv-Sekundær-DNS-server)  
-10. [Beskriv: Remote Desktop adgang til serverne](#Beskriv-Remote-Desktop-adgang-til-serverne)  
-11. [Beskriv: VPN opsætning til hjemmearbejdsplads](#Beskriv-VPN-opsætning-til-hjemmearbejdsplads)  
-12. [Beskriv: Adgang til website med FTP over SSL](#Beskriv-Adgang-til-website-med-FTP-over-SSL)
-13. [Forklaring af DDNS-NetBIOS-WINS-LLMNR](#Forklaring-af-DDNS-NetBIOS-WINS-LLMNR)  
+10. [Beskriv: Sekundær DNS server](#Beskriv-Sekundær-DNS-server)  
+11. [Beskriv: Remote Desktop adgang til serverne](#Beskriv-Remote-Desktop-adgang-til-serverne)  
+12. [Beskriv: VPN opsætning til hjemmearbejdsplads](#Beskriv-VPN-opsætning-til-hjemmearbejdsplads)  
+13. [Beskriv: Adgang til website med FTP over SSL](#Beskriv-Adgang-til-website-med-FTP-over-SSL)
+14. [Forklaring af DDNS-NetBIOS-WINS-LLMNR](#Forklaring-af-DDNS-NetBIOS-WINS-LLMNR)  
     - [DDNS](#DDNS)  
     - [NetBIOS](#NetBIOS)  
     - [WINS](#WINS)  
     - [LLMNR](#LLMNR)  
-14. [Forklar: Cloud-baseret serverdrift](#Forklar-Cloud-baseret-serverdrift)
+15. [Forklar: Cloud-baseret serverdrift](#Forklar-Cloud-baseret-serverdrift)
     - [Infrastructure as a service (IaaS)](#Infrastructure-as-a-service-IaaS)
     - [Platform as a service (PaaS) / Serverless](#Platform-as-a-service-PaaS--Serverless)
     - [Software as a service (SaaS)  ](#Software-as-a-service-SaaS)
     - [Fordele](#Fordele)
     - [Ulemper](#Ulemper)
-15. [Konklusion](#Konklusion)
+16. [Konklusion](#Konklusion)
     - [Server](#Server)  
     - [Netværk](#Netværk)  
     - [WSUS](#WSUS)
-16. [Henvisninger](#Henvisninger)  
-17. [Bilag](#Bilag)
+17. [Henvisninger](#Henvisninger)  
+18. [Bilag](#Bilag)
     - [Opsætning af Router](#Opsætning-af-Router)
     - [Opretning af SSL certifikat](#Opretning-af-SSL-certifikat)
     - [Opsætning af FTP server med SSL](#Opsætning-af-FTP-server-med-SSL)
@@ -121,6 +122,11 @@ Storage: 128GB
 Windows Server 2022 (21H2, build: xxxx.xxx)  
 Windows 10 Pro (21H1, build: 19043.928)  
 SQL Server Management  
+
+Til print serveren har vi brugt:  
+Bullzip  
+Win2PDF  
+BioPDF  
 
 ## Installeret server roller
 
@@ -249,17 +255,20 @@ Get-WindowsFeature | Where-Object { $_.installState -eq “Installed” } | Form
 </p>
 </details>
 
+## Backup løsning
+Der er opsat Shadow Copy, der løbende genererer sikkerhedskopier af alle brugerens filer på et serverdrev, på samme måde som f.eks. OneDrive eller Dropbox. Sikkerhedskopierne gemmes på serverdrevet UserFolders$, og NTFS-rettighederne bliver også gemt, så admin ikke kan tilgå brugernes data på serverdrevet.
+
 ## Konfigurationsvalg af fysisk server
 ### Server konfiguration
 Vi har ændret navnet på serveren til MooseServer, fordi vi ville have et Moose tema.
 Vi har givet serveren en statisk IP adresse, som er 192.168.1.2.
 
-Partitioner (UserFolder, Backup, Public, Data)…
-Ud fra vores 1TB HDD, vi havde i serveren, har vi delt den op i 4 partitioner;
-Public (P:)
-Data (D:)
-Backup (B:)
-UserFolders$ (U:)
+Partitioner (UserFolder, Backup, Public, Data)…  
+Ud fra vores 1TB HDD, vi havde i serveren, har vi delt den op i 4 partitioner;  
+- Public (P:)  
+- Data (D:)  
+- Backup (B:)  
+- UserFolders$ (U:)  
 Public og UserFolders$ er begge shared drives.
  
 Public drevet er et drev det bliver sendt ud til klienterne via en gruppepolitik, og er et fælles drev for alle brugerne.
