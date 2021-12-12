@@ -285,11 +285,11 @@ Forwarders er sat til at være 8.8.8.8 (Googles DNS) og 1.1.1.1,
 ### File Server Resource Manager konfiguration  
 File Server Resource Manager er en server rolle, der gør sådan at man kan lave Disk Quota’er på delte mappe. En Disk Quota er en lille service, der bestemmer hvor meget plads der må ligge i den delte mappe, men deler. 
 Vi har lavet 4 afdelinger, som hver har deres egne netværksdrev, som brugerne får via en GPO når de logger ind. 
-Følgende afdelinger, som har et netværksdrev:
-Administration
-Developer
-Designer
-DevOps
+Følgende afdelinger, som har et netværksdrev:  
+Administration  
+Developer  
+Designer  
+DevOps  
 
 Vi har lavet en Disk Quota template, som hedder DepartmentsQuotas, hvor der er blevet sat en max limit på 20GB i mappen. Det ville sige at mappen ikke kan indeholde mere end 20GB
 
