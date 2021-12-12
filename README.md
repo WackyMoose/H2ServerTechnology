@@ -18,11 +18,12 @@
 6. [Bruger Tabel](#Bruger-tabel)  
 7. [Sikkerheds Grupper](#Sikkerheds-Grupper)  
 8. [Konfigurationsvalg af fysisk server](#Konfigurationsvalg-af-fysisk-server)  
-   - [Server konfigurationer](#Server-konfigurationer)  
-   - [Active Directory konfigurationer](#Active-Directory-konfigurationer)  
-   - [DHCP konfigurationer](#DHCP-konfigurationer)  
-   - [WSUS konfiguration](#WSUS-konfiguration)  
+   - [Server konfiguration](#Server-konfiguration)  
+   - [Active Directory konfiguration](#Active-Directory-konfiguration)  
+   - [DHCP konfiguration](#DHCP-konfiguration)  
    - [DNS konfiguration](#DNS-konfiguration)  
+   - [File Server Resource Manager Konfiguration](#File-Server-Resource-Manager-Konfiguration)
+   - [WSUS konfiguration](#WSUS-konfiguration)  
 9. [Beskriv: Sekundær DNS server](#Beskriv-Sekundær-DNS-server)  
 10. [Beskriv: Remote Desktop adgang til serverne](#Beskriv-Remote-Desktop-adgang-til-serverne)  
 11. [Beskriv: VPN opsætning til hjemmearbejdsplads](#Beskriv-VPN-opsætning-til-hjemmearbejdsplads)  
@@ -249,7 +250,7 @@ Get-WindowsFeature | Where-Object { $_.installState -eq “Installed” } | Form
 </details>
 
 ## Konfigurationsvalg af fysisk server
-### Server konfigurationer
+### Server konfiguration
 Vi har ændret navnet på serveren til MooseServer, fordi vi ville have et Moose tema.
 Vi har givet serveren en statisk IP adresse, som er 192.168.1.2.
 
@@ -267,12 +268,12 @@ UserFolders$ drevet er det drev vi har sat Folder Redirection op til at køre p�
 
 Data drevet er det drev, som indeholder WSUS mappen, alle afdelings mapperne, som er shared mapper, hvor det kun er afdelingen der har adgang til mappen, som er sat med NTFS rettigheder.
 
-### Active Directory konfigurationer
+### Active Directory konfiguration
 Vores domæne i vores Active Directory hedder servertek.local. 
 Directory Services Restore Mode password (DSRM): DataIT2021!
 Vi har konfigureret en række gruppepolitikker for folder redirection og netværksdrev til hver afdeling, 
 
-### DHCP konfigurationer
+### DHCP konfiguration
 Vi har oprettet et scope med navnet servertek med start IP 192.168.1.1 og slut IP 192.168.1.254. Grunden til at vi ikke har scope fra 192.168.1.0 til 192.168.1.255, er fordi at .0 er vores netværks adresse, og .255 er broadcast adressen i vores scope. Vi har oprettet en eksklusion fra 192.168.1 til 192.168.10. Vi har valgt dette scope, så der er plads til nye servere (192.168.1.3/4/5 osv.), og så der er plads i scopet til at ansætte nye medarbejdere. Lease time er sat til 8 timer, da det er en hel arbejdsdag.
 
 I en rigtig virksomhed ville man ikke vælge denne løsning. I stedet ville man lægge servere, administration og hver afdeling i sit eget V-LAN/subnet.
