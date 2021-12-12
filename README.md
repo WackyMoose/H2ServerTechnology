@@ -568,21 +568,191 @@ https://www.win2pdf.com/
 </p>
 </details> 
 
-### ISS Dummy website
+### IIS Dummy website
+</details> 
+<details><summary>Her er et billede af vores dummy hjemmeside med logo og navn</summary>
+   <p>
+      
+![IISWebsite](https://github.com/WackyMoose/H2ServerTechnology/blob/main/IISWebsite.png)
+
+</p>
+</details> 
 
 ### Folder Redirection
+<details><summary>Her kan man se at der er sat Folder Redirection op på Dokument mappen, og den er sat til \\MOOSESERVER\UserFolders$, som er det mappe som brugerne skal ligge i.</summary>
+   <p>
+      
+![FolderRedirect01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FolderRedirect01.png)
+
+</p>
+</details> 
+<details><summary>Her kan man se at der er sat Folder Redirection op på Skrivebords mappen, og den er sat til \\MOOSESERVER\UserFolders$, som er det mappe som brugerne skal ligge i.</summary>
+   <p>
+      
+![FolderRedirect02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FolderRedirect02.png)
+
+</p>
+</details> 
+<details><summary>Her laver vi en gpupdate /force, for at få Folder Redirection gruppepolitikken.</summary>
+   <p>
+      
+![FolderRedirect03](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FolderRedirect03.png)
+
+</p>
+</details> 
+<details><summary>Her kan man se at Dokument mappen nu kører på serveren, gennem Folder Redirection.</summary>
+   <p>
+      
+![FolderRedirect04](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FolderRedirect04.png)
+
+</p>
+</details> 
+<details><summary>Her kan man se at Skrivebords mappen nu køre på serveren, gennem Folder Redirection.</summary>
+   <p>
+      
+![FolderRedirect05](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FolderRedirect05.png)
+
+</p>
+</details> 
 
 ### Afdelings mapper (NTFS og Share rettigheder)
+<details><summary>Her kan man se at gruppepolitikken bliver lavet, og at stien er sat til \\MOOSESERVER\Designer.</summary>
+   <p>
+      
+![ShareRights01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ShareRights01.png)
+
+</p>
+</details> 
+<details><summary>På billedet kan man se NTFS rettigheder for Designer afdelingen, i deres afdelings mappe.</summary>
+   <p>
+      
+![ShareRights02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ShareRights02.png)
+
+</p>
+</details> 
+<details><summary>På billedet kan man se Share rettigheder for Designer afdelingen, i deres afdelings mappe.</summary>
+   <p>
+      
+![ShareRights03](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ShareRights03.png)
+
+</p>
+</details> 
+<details><summary>Efter en gpupdate /force, kan vi se at afdelings mappen virker fint, samt vores public drive også virker som den skal.</summary>
+   <p>
+      
+![ShareRights04](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ShareRights04.png)
+
+</p>
+</details> 
 
 ### Backup løsning
+<details><summary>Her kan man se at vi har sat en Shadow Copy op til at køre på UserFolders$ drevet.</summary>
+   <p>
+      
+![Backup01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Backup01.png)
+
+</p>
+</details> 
+<details><summary>På billedet kan man se at vi har sat vores Shadow Copy til at køre hver dag kl. 20:00.</summary>
+   <p>
+      
+![Backup02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Backup02.png)
+
+</p>
+</details> 
 
 ### Opsætning af Disk Quota
+<details><summary>For at kunne sætte Disk Quota op, skal man installere en server rolle, som hedder “File Server Resource Manager”.</summary>
+   <p>
+      
+![DiskQuota01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DiskQuota01.png)
+
+</p>
+</details> 
+<details><summary>Inde i Server Manager, og under “Shares” finder man den shared mappe, men gerne ville sætte en Disk Quota på. Højre klik på mappen og tryk på “Configure Quota”</summary>
+   <p>
+      
+![DiskQuota02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DiskQuota02.png)
+
+</p>
+</details> 
+<details><summary>Her skal man vælge den “template”, som man enten selv har oprettet eller også kan man vælge en af dem der allerede er lavet. Vi har lavet en der hedder DepartmentQuotas, som vi vælger. Når vi har markeret den, så trykker man bare på “Ok”. Denne Disk Quota har vi sat på alle vores afdelingsdrev.</summary>
+   <p>
+      
+![DiskQuota03](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DiskQuota03.png)
+
+</p>
+</details> 
+<details><summary>Her kan man se at vores Disk Quota virker på vores Administration drev.</summary>
+   <p>
+      
+![DiskQuota04](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DiskQuota04.png)
+
+</p>
+</details> 
 
 ### WSUS Konfiguration
+<details><summary>På billedet kan man se at vi vælger at synchronicer fra Microsoft Update.</summary>
+   <p>
+      
+![WSUSConfig01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/WSUSConfig01.png)
+
+</p>
+</details> 
+<details><summary>På billedet kan man se at vi kun vælger at installere Danske og Engelske versioner.</summary>
+   <p>
+      
+![WSUSConfig02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/WSUSConfig02.png)
+
+</p>
+</details> 
+<details><summary>På billedet kan man se at vi har valgt alle opdateringer inde for Windows.</summary>
+   <p>
+      
+![WSUSConfig03](https://github.com/WackyMoose/H2ServerTechnology/blob/main/WSUSConfig03.png)
+
+</p>
+</details> 
+<details><summary>På billedet kan man se at vi har valgt alle Classifications.</summary>
+   <p>
+      
+![WSUSConfig04](https://github.com/WackyMoose/H2ServerTechnology/blob/main/WSUSConfig04.png)
+
+</p>
+</details> 
+<details><summary>På billedet kan man se at vi har valgt at synkroniser automatisk hver dag kl. 16:00</summary>
+   <p>
+      
+![WSUSConfig05](https://github.com/WackyMoose/H2ServerTechnology/blob/main/WSUSConfig05.png)
+
+</p>
+</details> 
 
 ### WSUS Fejl
+<details><summary>Her er et billede af en af de fejl vi fik oftest</summary>
+   <p>
+      
+![WSUSError01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/WSUSError01.png)
+
+</p>
+</details> 
+<details><summary>Her er en anden fejl, vi også har fået en del gange</summary>
+   <p>
+      
+![WSUSError02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/WSUSError02.png)
+
+</p>
+</details> 
 
 ### Print Server
+<details><summary>Installation af print server</summary>
+   <p>
+      
+![PrintServer01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/PrintServer01.png)
+![PrintServer02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/PrintServer02.png)
+
+</p>
+</details>
 
 ### Opretning af SSL certifikat    
 <details><summary>Her trykker man på “Server Certificates”.</summary>
