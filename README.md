@@ -13,6 +13,7 @@
      - [Server](#Server)  
      - [Router](#Router)  
      - [Klient Computer](#Klient-Computer)   
+   - [Software Specifikationer](#Software-Specifikationer)  
 5. [Installeret server roller](#Installeret-server-roller)
 6. [Bruger Tabel](#Bruger-tabel)  
 7. [Sikkerheds Grupper](#Sikkerheds-Grupper)  
@@ -73,8 +74,7 @@ Der skal opsættes en server og en klient på et lokalt netværk. Følgende beti
 - Forklar begrebet cloudbaseret serverdrift, uddyb fordele og ulemper.
 
 ## Netværksdiagram
-Skærmbillede fra Packet Tracer…  
-<details><summary>Networks Diagram</summary>
+<details><summary>Netværks Diagram</summary>
    <p>
       
 ![NetværksDiagram](https://github.com/WackyMoose/H2ServerTechnology/blob/main/NetworksDiagram.png)
@@ -115,6 +115,11 @@ Enhed: Moose01
 CPU: Intel(R) Core™ 2 Duo CPU T9400 @ 2.53Ghz  
 RAM: 4GB  
 Storage: 128GB  
+
+### Software specifikationer  
+Windows Server 2022 (21H2, build: xxxx.xxx)  
+Windows 10 Pro (21H1, build: 19043.928)  
+SQL Server Management  
 
 ## Installeret server roller
 
@@ -248,6 +253,20 @@ Get-WindowsFeature | Where-Object { $_.installState -eq “Installed” } | Form
 Vi har ændret navnet på serveren til MooseServer, fordi vi ville have et Moose tema.
 Vi har givet serveren en statisk IP adresse, som er 192.168.1.2.
 
+Partitioner (UserFolder, Backup, Public, Data)…
+Ud fra vores 1TB HDD, vi havde i serveren, har vi delt den op i 4 partitioner;
+Public (P:)
+Data (D:)
+Backup (B:)
+UserFolders$ (U:)
+Public og UserFolders$ er begge shared drives.
+ 
+Public drevet er et drev det bliver sendt ud til klienterne via en gruppepolitik, og er et fælles drev for alle brugerne.
+
+UserFolders$ drevet er det drev vi har sat Folder Redirection op til at køre på. Det er det drev, hvor alle klienternes mapper ligger i.
+
+Data drevet er det drev, som indeholder WSUS mappen, alle afdelings mapperne, som er shared mapper, hvor det kun er afdelingen der har adgang til mappen, som er sat med NTFS rettigheder.
+
 ### Active Directory konfigurationer
 Vores domæne i vores Active Directory hedder servertek.local. 
 Directory Services Restore Mode password (DSRM): DataIT2021!
@@ -259,10 +278,21 @@ Vi har oprettet et scope med navnet servertek med start IP 192.168.1.1 og slut I
 I en rigtig virksomhed ville man ikke vælge denne løsning. I stedet ville man lægge servere, administration og hver afdeling i sit eget V-LAN/subnet.
 Scopet udsender information om IP adressen til default gateway og DNS server, samt DNS Domain name. 
 
-### WSUS konfiguration
-
 ### DNS konfiguration
 Forwarders er sat til at være 8.8.8.8 (Googles DNS) og 1.1.1.1, 
+
+### File Server Resource Manager konfiguration  
+File Server Resource Manager er en server rolle, der gør sådan at man kan lave Disk Quota’er på delte mappe. En Disk Quota er en lille service, der bestemmer hvor meget plads der må ligge i den delte mappe, men deler. 
+Vi har lavet 4 afdelinger, som hver har deres egne netværksdrev, som brugerne får via en GPO når de logger ind. 
+Følgende afdelinger, som har et netværksdrev:
+Administration
+Developer
+Designer
+DevOps
+
+Vi har lavet en Disk Quota template, som hedder DepartmentsQuotas, hvor der er blevet sat en max limit på 20GB i mappen. Det ville sige at mappen ikke kan indeholde mere end 20GB
+
+### WSUS konfiguration  
 
 ## Beskriv: Sekundær DNS server
 “Beskriv hvorledes man opsættes yderligere én server, der skal fungere som sekundær DNS-server. Serveren kaldes DevDNS. Den sekundære DNS-server skal indeholde en subdomain zone der kaldes dev.servertek.local, ligeledes beskrives hvorledes man opretter en DNS-delegering til dev.servertek.local på den primære domain-server.”
