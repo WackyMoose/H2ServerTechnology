@@ -269,7 +269,7 @@ Get-WindowsFeature | Where-Object { $_.installState -eq “Installed” } | Form
 </details>
 
 ## Backup løsning
-Der er opsat Shadow Copy, der løbende genererer sikkerhedskopier af alle brugerens filer på et serverdrev, på samme måde som f.eks. OneDrive eller Dropbox. Sikkerhedskopierne gemmes på serverdrevet UserFolders$, og NTFS-rettighederne bliver også gemt, så admin ikke kan tilgå brugernes data på serverdrevet.
+Der er opsat Shadow Copy, der løbende genererer sikkerhedskopier af alle brugerens filer på et serverdrev, på samme måde som f.eks. OneDrive eller Dropbox. Sikkerhedskopierne gemmes på serverdrevet UserFolders$, og NTFS-rettighederne bliver også gemt, så admin ikke kan tilgå brugernes data på serverdrevet. [bilag](#Backup-løsning)
 
 ## Konfigurationsvalg af fysisk server
 ### Server konfiguration
