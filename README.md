@@ -515,12 +515,58 @@ https://www.win2pdf.com/
 </details> 
 
 ### Active Directory opsætning
+<details><summary>Her er et billede af hvordan vores OU struktur i vores Active Directory er sat op. Der kan ses i toppen af billedet, at afdelings OU’erne ligger inde i vores; servertek (local) forest -> servertek -> Users</summary>
+   <p>
+      
+![ActiveDirectory](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ActiveDirectory.png)
+
+</p>
+</details> 
 
 ### GPO Struktur
+<details><summary>På billedet kan man se hvordan vi har struktureret vores GPO’er i vores OU’er.</summary>
+   <p>
+      
+![GPOStructure](https://github.com/WackyMoose/H2ServerTechnology/blob/main/GPOStructure.png)
+
+</p>
+</details> 
 
 ### DHCP konfiguration
+<details><summary>Installation af DHCP serverrolle gennem Server Manager.</summary>
+   <p>
+      
+![DHCPInstallation01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DHCPInstallation01.png)
+![DHCPInstallation02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DHCPInstallation02.png)
+
+</p>
+</details> 
+<details><summary>DHCP post-install configuration</summary>
+   <p>
+      
+![DHCPPostInstallation01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DHCPPostInstallation01.png)
+![DHCPPostInstallation02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DHCPPostInstallation02.png)
+
+</p>
+</details> 
+<details><summary>DHCP scope Wizard</summary>
+   <p>
+      
+![DHCPScopeWizard01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DHCPScopeWizard01.png)
+![DHCPScopeWizard02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DHCPScopeWizard02.png)
+
+</p>
+</details> 
 
 ### DNS konfiguration
+</details> 
+<details><summary>På billedet kan man se at hvordan vores DNS server er konfigureret.</summary>
+   <p>
+      
+![DNSConfig](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DNSConfig.png)
+
+</p>
+</details> 
 
 ### ISS Dummy website
 
