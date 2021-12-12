@@ -44,6 +44,7 @@
 17. [Konklusion](#Konklusion)
     - [Netværk](#Netværk)  
     - [WSUS](#WSUS)
+    - [Print Server](#Print-Server)
 18. [Henvisninger](#Henvisninger)  
 19. [Bilag](#Bilag)
     - [Opsætning af Router](#Opsætning-af-Router)
@@ -426,6 +427,14 @@ Til at starte med gik alt fint, indtil at vores WSUS Console ikke ville begynde 
 </details>
 
 Efter vi havde slettet databasen, gik vi tilbage til WSUS services, og forsøgte igen at sætte WSUS op denne, gang blev vi mødt af fejlen at vi ikke kunne tilgå “Microsoft Update Service” som ligger ude på nettet et eller andet sted. Her begyndte et træls loop, der gjorde at vi aldrig kom videre med WSUS, da den så igen smed en fejl fordi vi brugte en forkert database version.
+
+## Print Server
+Vi har arbejdet intenst på at få lavet en delt netværks-PDF-print server. 
+Dog kom vi ind i RIGTIG mange problemer, vi har forsøgt med at finde en løsning i Windows Server, samt med en driver hvor vi printede til en fil. 
+Vi har også forsøgt at bruge tredjeparts drivere / programmer for at få det til at virke, dog uden held. 
+Vi brugte også en del tid på at undersøge hvilke porte, der skulle åbnes og oprette de nødvendige firewall rules.
+Vi har brugt følgende tredjeparts drivere / programmer: Bullzip, Win2PDF, BioPDF.
+
 ## Henvisninger
 Sekundær DNS server
 https://www.youtube.com/watch?v=LmpuiiQ_GS4
