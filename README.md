@@ -444,6 +444,31 @@ Table of Server Roles
 https://sid-500.com/2017/07/18/windows-server-list-all-installed-roles-and-features-using-powershell/ 
 
 FTP over SSL
+https://winscp.net/eng/docs/guide_windows_ftps_server
+
+L2TP over IPSec
+https://msftwebcast.com/2020/02/how-to-setup-l2tp-ipsec-vpn-on-windows-server-2019.html
+
+DDNS
+https://www.cloudns.net/blog/what-is-dynamic-dns/
+https://stevessmarthomeguide.com/dynamic-dns/
+
+NetBIOS
+https://www.techtarget.com/searchnetworking/definition/NetBIOS
+https://www.lifewire.com/netbios-software-protocol-818229
+
+WINS
+https://www.techtarget.com/searchnetworking/answer/What-is-difference-between-a-WINS-server-and-a-DNS-server
+https://networkencyclopedia.com/wins-server/
+
+LLMNR
+https://www.crowe.com/cybersecurity-watch/netbios-llmnr-giving-away-credentials
+https://en.wikipedia.org/wiki/Link-Local_Multicast_Name_Resolution
+
+Print Server
+https://www.biopdf.com/
+https://www.bullzip.com/
+https://www.win2pdf.com/
 
 ## Bilag  
 ### Opsætning af Router  
