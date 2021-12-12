@@ -48,6 +48,18 @@
 18. [Henvisninger](#Henvisninger)  
 19. [Bilag](#Bilag)
     - [Opsætning af Router](#Opsætning-af-Router)
+    - [Active Directory opsætning](#Active-Directory-opsætning)
+    - [GPO Struktur](#GPO-Struktur)
+    - [DHCP konfiguration](#DHCP-konfiguration)
+    - [DNS konfiguration](#DNS-konfiguration)
+    - [IIS Dummy website](#IIS-Dummy-website)
+    - [Folder Redirection](#Folder-Redirection)
+    - [Afdelings mapper (NTFS og Share rettigheder)](#Afdelings-mapper-NTFS-og-Share-rettigheder)
+    - [Backup løsning](#Backup-løsning)
+    - [Opsætning af Disk Quota](#Opsætning-af-Disk-Quota)
+    - [WSUS Konfiguration](#WSUS-Konfiguration)
+    - [WSUS Fejl](#WSUS-Fejl)
+    - [Print server](#Print-server)
     - [Opretning af SSL certifikat](#Opretning-af-SSL-certifikat)
     - [Opsætning af FTP server med SSL](#Opsætning-af-FTP-server-med-SSL)
 
@@ -501,6 +513,30 @@ https://www.win2pdf.com/
 
 </p>
 </details> 
+
+### Active Directory opsætning
+
+### GPO Struktur
+
+### DHCP konfiguration
+
+### DNS konfiguration
+
+### ISS Dummy website
+
+### Folder Redirection
+
+### Afdelings mapper (NTFS og Share rettigheder)
+
+### Backup løsning
+
+### Opsætning af Disk Quota
+
+### WSUS Konfiguration
+
+### WSUS Fejl
+
+### Print Server
 
 ### Opretning af SSL certifikat    
 <details><summary>Her trykker man på “Server Certificates”.</summary>
