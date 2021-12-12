@@ -92,7 +92,7 @@ Der skal opsættes en server og en klient på et lokalt netværk. Følgende beti
 <details><summary>Netværks Diagram</summary>
    <p>
       
-![NetværksDiagram](https://github.com/WackyMoose/H2ServerTechnology/blob/main/NetworksDiagram.png)
+![NetværksDiagram](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/NetworksDiagram.png)
 
 </p>
 </details>
@@ -433,7 +433,7 @@ Vi har arbejdet intens på at få WSUS til at virke, men trods flere forsøg fik
 Til at starte med gik alt fint, indtil at vores WSUS Console ikke ville begynde at synkronisere opdateringer uden at crashe. Der gik lidt tid på at finde ud af hvorfor, men efter noget tid tog vi beslutningen om at vi måtte geninstallere WSUS servicen. Efter vi havde geninstalleret WSUS services, fik vi en fejl der sagde at vores database havde en forkert version. Der gik lidt tid på, at finde ud hvorfor den gav den fejl besked, og vi fandt ud af at WSUS benytter en lokal database. Vi måtte installere Microsoft SQL Server Management Studio, og logge ind på den lokale database, WSUS havde oprettet. Det gjorde vi ved at forbinde til: \\.\pipe\microsoft##WID\tsql\query. Inde på den lokale database skulle vi slette en database der hed “SUSDB”, som kan ses på <details><summary>billedet</summary>
    <p>
       
-![WSUSKonklusion](https://github.com/WackyMoose/H2ServerTechnology/blob/main/WSUSKonklusion.png)
+![WSUSKonklusion](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/WSUSKonklusion.png)
   
    </p>
 </details>
@@ -487,14 +487,14 @@ https://www.win2pdf.com/
 <details><summary>Router login interface, koden er admin.</summary>
    <p>
       
-![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/LoginInterface.png)
+![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/LoginInterface.png)
 
 </p>
 </details>  
 <details><summary>Her kan man se hvilken MAC adresse WAN interfacet har, samt IP adresse.</summary>
    <p>
       
-![MACWan](https://github.com/WackyMoose/H2ServerTechnology/blob/main/MACWan.png)
+![MACWan](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/MACWan.png)
 
 </p>
 </details> 
@@ -502,14 +502,14 @@ https://www.win2pdf.com/
    Samt man kan se at DHCP serveren på routeren er disabled</summary>
    <p>
       
-![MACLan](https://github.com/WackyMoose/H2ServerTechnology/blob/main/MACLan.png)
+![MACLan](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/MACLan.png)
 
 </p>
 </details> 
 <details><summary>Her kan man se at NAT er enabled på vores router.</summary>
    <p>
       
-![NAT](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Nat.png)
+![NAT](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/Nat.png)
 
 </p>
 </details> 
@@ -518,7 +518,7 @@ https://www.win2pdf.com/
 <details><summary>Her er et billede af hvordan vores OU struktur i vores Active Directory er sat op. Der kan ses i toppen af billedet, at afdelings OU’erne ligger inde i vores; servertek (local) forest -> servertek -> Users</summary>
    <p>
       
-![ActiveDirectory](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ActiveDirectory.png)
+![ActiveDirectory](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/ActiveDirectory.png)
 
 </p>
 </details> 
@@ -527,7 +527,7 @@ https://www.win2pdf.com/
 <details><summary>På billedet kan man se hvordan vi har struktureret vores GPO’er i vores OU’er.</summary>
    <p>
       
-![GPOStructure](https://github.com/WackyMoose/H2ServerTechnology/blob/main/GPOStructure.png)
+![GPOStructure](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/GPOStructure.png)
 
 </p>
 </details> 
@@ -536,24 +536,24 @@ https://www.win2pdf.com/
 <details><summary>Installation af DHCP serverrolle gennem Server Manager.</summary>
    <p>
       
-![DHCPInstallation01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DHCPInstallation01.png)
-![DHCPInstallation02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DHCPInstallation02.png)
+![DHCPInstallation01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/DHCPInstallation01.png)
+![DHCPInstallation02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/DHCPInstallation02.png)
 
 </p>
 </details> 
 <details><summary>DHCP post-install configuration</summary>
    <p>
       
-![DHCPPostInstallation01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DHCPPostInstallation01.png)
-![DHCPPostInstallation02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DHCPPostInstallation02.png)
+![DHCPPostInstallation01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/DHCPPostInstallation01.png)
+![DHCPPostInstallation02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/DHCPPostInstallation02.png)
 
 </p>
 </details> 
 <details><summary>DHCP scope Wizard</summary>
    <p>
       
-![DHCPScopeWizard01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DHCPScopeWizard01.png)
-![DHCPScopeWizard02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DHCPScopeWizard02.png)
+![DHCPScopeWizard01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/DHCPScopeWizard01.png)
+![DHCPScopeWizard02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/DHCPScopeWizard02.png)
 
 </p>
 </details> 
@@ -563,7 +563,7 @@ https://www.win2pdf.com/
 <details><summary>På billedet kan man se at hvordan vores DNS server er konfigureret.</summary>
    <p>
       
-![DNSConfig](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DNSConfig.png)
+![DNSConfig](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/DNSConfig.png)
 
 </p>
 </details> 
@@ -573,7 +573,7 @@ https://www.win2pdf.com/
 <details><summary>Her er et billede af vores dummy hjemmeside med logo og navn</summary>
    <p>
       
-![IISWebsite](https://github.com/WackyMoose/H2ServerTechnology/blob/main/IISWebsite.png)
+![IISWebsite](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/IISWebsite.png)
 
 </p>
 </details> 
@@ -582,35 +582,35 @@ https://www.win2pdf.com/
 <details><summary>Her kan man se at der er sat Folder Redirection op på Dokument mappen, og den er sat til \\MOOSESERVER\UserFolders$, som er det mappe som brugerne skal ligge i.</summary>
    <p>
       
-![FolderRedirect01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FolderRedirect01.png)
+![FolderRedirect01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/FolderRedirect01.png)
 
 </p>
 </details> 
 <details><summary>Her kan man se at der er sat Folder Redirection op på Skrivebords mappen, og den er sat til \\MOOSESERVER\UserFolders$, som er det mappe som brugerne skal ligge i.</summary>
    <p>
       
-![FolderRedirect02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FolderRedirect02.png)
+![FolderRedirect02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/FolderRedirect02.png)
 
 </p>
 </details> 
 <details><summary>Her laver vi en gpupdate /force, for at få Folder Redirection gruppepolitikken.</summary>
    <p>
       
-![FolderRedirect03](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FolderRedirect03.png)
+![FolderRedirect03](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/FolderRedirect03.png)
 
 </p>
 </details> 
 <details><summary>Her kan man se at Dokument mappen nu kører på serveren, gennem Folder Redirection.</summary>
    <p>
       
-![FolderRedirect04](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FolderRedirect04.png)
+![FolderRedirect04](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/FolderRedirect04.png)
 
 </p>
 </details> 
 <details><summary>Her kan man se at Skrivebords mappen nu køre på serveren, gennem Folder Redirection.</summary>
    <p>
       
-![FolderRedirect05](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FolderRedirect05.png)
+![FolderRedirect05](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/FolderRedirect05.png)
 
 </p>
 </details> 
@@ -619,28 +619,28 @@ https://www.win2pdf.com/
 <details><summary>Her kan man se at gruppepolitikken bliver lavet, og at stien er sat til \\MOOSESERVER\Designer.</summary>
    <p>
       
-![ShareRights01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ShareRights01.png)
+![ShareRights01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/ShareRights01.png)
 
 </p>
 </details> 
 <details><summary>På billedet kan man se NTFS rettigheder for Designer afdelingen, i deres afdelings mappe.</summary>
    <p>
       
-![ShareRights02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ShareRights02.png)
+![ShareRights02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/ShareRights02.png)
 
 </p>
 </details> 
 <details><summary>På billedet kan man se Share rettigheder for Designer afdelingen, i deres afdelings mappe.</summary>
    <p>
       
-![ShareRights03](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ShareRights03.png)
+![ShareRights03](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/ShareRights03.png)
 
 </p>
 </details> 
 <details><summary>Efter en gpupdate /force, kan vi se at afdelings mappen virker fint, samt vores public drive også virker som den skal.</summary>
    <p>
       
-![ShareRights04](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ShareRights04.png)
+![ShareRights04](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/ShareRights04.png)
 
 </p>
 </details> 
@@ -649,14 +649,14 @@ https://www.win2pdf.com/
 <details><summary>Her kan man se at vi har sat en Shadow Copy op til at køre på UserFolders$ drevet.</summary>
    <p>
       
-![Backup01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Backup01.png)
+![Backup01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/Backup01.png)
 
 </p>
 </details> 
 <details><summary>På billedet kan man se at vi har sat vores Shadow Copy til at køre hver dag kl. 20:00.</summary>
    <p>
       
-![Backup02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Backup02.png)
+![Backup02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/Backup02.png)
 
 </p>
 </details> 
@@ -665,28 +665,28 @@ https://www.win2pdf.com/
 <details><summary>For at kunne sætte Disk Quota op, skal man installere en server rolle, som hedder “File Server Resource Manager”.</summary>
    <p>
       
-![DiskQuota01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DiskQuota01.png)
+![DiskQuota01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/DiskQuota01.png)
 
 </p>
 </details> 
 <details><summary>Inde i Server Manager, og under “Shares” finder man den shared mappe, men gerne ville sætte en Disk Quota på. Højre klik på mappen og tryk på “Configure Quota”</summary>
    <p>
       
-![DiskQuota02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DiskQuota02.png)
+![DiskQuota02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/DiskQuota02.png)
 
 </p>
 </details> 
 <details><summary>Her skal man vælge den “template”, som man enten selv har oprettet eller også kan man vælge en af dem der allerede er lavet. Vi har lavet en der hedder DepartmentQuotas, som vi vælger. Når vi har markeret den, så trykker man bare på “Ok”. Denne Disk Quota har vi sat på alle vores afdelingsdrev.</summary>
    <p>
       
-![DiskQuota03](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DiskQuota03.png)
+![DiskQuota03](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/DiskQuota03.png)
 
 </p>
 </details> 
 <details><summary>Her kan man se at vores Disk Quota virker på vores Administration drev.</summary>
    <p>
       
-![DiskQuota04](https://github.com/WackyMoose/H2ServerTechnology/blob/main/DiskQuota04.png)
+![DiskQuota04](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/DiskQuota04.png)
 
 </p>
 </details> 
@@ -695,35 +695,35 @@ https://www.win2pdf.com/
 <details><summary>På billedet kan man se at vi vælger at synchronicer fra Microsoft Update.</summary>
    <p>
       
-![WSUSConfig01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/WSUSConfig01.png)
+![WSUSConfig01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/WSUSConfig01.png)
 
 </p>
 </details> 
 <details><summary>På billedet kan man se at vi kun vælger at installere Danske og Engelske versioner.</summary>
    <p>
       
-![WSUSConfig02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/WSUSConfig02.png)
+![WSUSConfig02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/WSUSConfig02.png)
 
 </p>
 </details> 
 <details><summary>På billedet kan man se at vi har valgt alle opdateringer inde for Windows.</summary>
    <p>
       
-![WSUSConfig03](https://github.com/WackyMoose/H2ServerTechnology/blob/main/WSUSConfig03.png)
+![WSUSConfig03](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/WSUSConfig03.png)
 
 </p>
 </details> 
 <details><summary>På billedet kan man se at vi har valgt alle Classifications.</summary>
    <p>
       
-![WSUSConfig04](https://github.com/WackyMoose/H2ServerTechnology/blob/main/WSUSConfig04.png)
+![WSUSConfig04](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/WSUSConfig04.png)
 
 </p>
 </details> 
 <details><summary>På billedet kan man se at vi har valgt at synkroniser automatisk hver dag kl. 16:00</summary>
    <p>
       
-![WSUSConfig05](https://github.com/WackyMoose/H2ServerTechnology/blob/main/WSUSConfig05.png)
+![WSUSConfig05](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/WSUSConfig05.png)
 
 </p>
 </details> 
@@ -732,14 +732,14 @@ https://www.win2pdf.com/
 <details><summary>Her er et billede af en af de fejl vi fik oftest</summary>
    <p>
       
-![WSUSError01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/WSUSError01.png)
+![WSUSError01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/WSUSError01.png)
 
 </p>
 </details> 
 <details><summary>Her er en anden fejl, vi også har fået en del gange</summary>
    <p>
       
-![WSUSError02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/WSUSError02.png)
+![WSUSError02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/WSUSError02.png)
 
 </p>
 </details> 
@@ -748,8 +748,8 @@ https://www.win2pdf.com/
 <details><summary>Installation af print server</summary>
    <p>
       
-![PrintServer01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/PrintServer01.png)
-![PrintServer02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/PrintServer02.png)
+![PrintServer01](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/PrintServer01.png)
+![PrintServer02](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/PrintServer02.png)
 
 </p>
 </details>
@@ -758,28 +758,28 @@ https://www.win2pdf.com/
 <details><summary>Her trykker man på “Server Certificates”.</summary>
    <p>
       
-![ServerCertificates](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ServerCertificates.png)
+![ServerCertificates](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/ServerCertificates.png)
 
 </p>
 </details>  
 <details><summary>Tryk på “Create Self-Signed Certificate…” ude i højre side.</summary>
    <p>
       
-![SelfSignedCertificate](https://github.com/WackyMoose/H2ServerTechnology/blob/main/SelfSignedCertificate.png)
+![SelfSignedCertificate](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/SelfSignedCertificate.png)
 
 </p>
 </details> 
 <details><summary>Her skal man give den et navn, samt vælge hvad type certifikat det skal være.</summary>
    <p>
       
-![NameCertificate](https://github.com/WackyMoose/H2ServerTechnology/blob/main/NameCertificate.png)
+![NameCertificate](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/NameCertificate.png)
 
 </p>
 </details> 
 <details><summary>Her kan man se at “servertek” certifikatet er blevet oprettet.</summary>
    <p>
       
-![ServerTek](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ServerTek.png)
+![ServerTek](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/ServerTek.png)
 
 </p>
 </details> 
@@ -788,21 +788,21 @@ https://www.win2pdf.com/
 <details><summary>FTP rollen installere gennem Server Manager -> Manage -> Add Roles and Features. Der ligger den under Server Roles og under Web Server (IIS).</summary>
    <p>
       
-![ServerManager](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ServerManager.png)
+![ServerManager](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/ServerManager.png)
 
 </p>
 </details>  
 <details><summary>På den side du gerne ville have FTP serveren, skal du højreklikke og tryk på “Add FTP Publishing…”.</summary>
    <p>
       
-![FTPPublishing](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FTPPublishing.png)
+![FTPPublishing](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/FTPPublishing.png)
 
 </p>
 </details> 
 <details><summary>Her skal man vælge hvilken IP adresse, FTP serveren skal køre på, man kan også vælge hvilken port det skal køre, men som standard kør det på port 21. Samt vælger det SSL certifikat der blevet lavet tidligere.</summary>
    <p>
       
-![FTPIP](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FTPIP.png)
+![FTPIP](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/FTPIP.png)
 
 </p>
 </details> 
@@ -811,7 +811,7 @@ I Authorization vælger vi “Specified roles or User groups”, og i det input 
 </summary>
    <p>
       
-![BasicAuthentication](https://github.com/WackyMoose/H2ServerTechnology/blob/main/BasicAuthentication.png)
+![BasicAuthentication](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/BasicAuthentication.png)
 
 </p>
 </details> 
@@ -819,7 +819,7 @@ I Authorization vælger vi “Specified roles or User groups”, og i det input 
 <details><summary>Her kan man se at der er adgang til FTP serveren, og man kan se websites filer.</summary>
    <p>
       
-![FTPWorking](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FTPWorking.png)
+![FTPWorking](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Images/FTPWorking.png)
 
 </p>
 </details> 
