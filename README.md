@@ -286,27 +286,27 @@ Public og UserFolders$ er begge shared drives.
 
 Public drevet bliver delt med klienterne via en gruppepolitik og fungerer som fællesdrev for alle brugere.
 
-Folder Redirection er sat op på UserFolders$ drevet, hvor alle brugernes private mapper ligger. NTFS-rettigheder kopieres også over, så admin ikke kan se indholdet.
+Folder Redirection er sat op på UserFolders$ drevet, hvor alle brugernes private mapper ligger. NTFS-rettigheder kopieres også over, så admin ikke kan se indholdet. [Bilag](#Active-Directory-opsætning)
 
-Backup drevet er en kopi af UserFolders$ drevet, hvor ALT bliver kopieret med over, sådan at det er en tro kopi af UserFolders$ og alle brugerne private mapper, som bliver syncet med Folder Redirection.
+Backup drevet er en kopi af UserFolders$ drevet, hvor ALT bliver kopieret med over, sådan at det er en tro kopi af UserFolders$ og alle brugerne private mapper, som bliver syncet med Folder Redirection. [Bilag](#Backup-løsning-Bilag)
 
-Data drevet indeholder WSUS mappen, alle afdelings mapperne, som er shared mapper, hvor det kun er afdelingen der har adgang til mappen, som er sat med NTFS rettigheder.
+Data drevet indeholder WSUS mappen, alle afdelings mapperne, som er shared mapper, hvor det kun er afdelingen der har adgang til mappen, som er sat med NTFS rettigheder. [Bilag](#Afdelings-mapper-NTFS-og-Share-rettigheder)
 
 ### Active Directory konfiguration
 Active Directory forest hedder servertek.local. Directory Services Restore Mode password (DSRM) er DataIT2021!
 Via Active Directory Administrative Center er der oprettet en OU i vores servertek.local forest.  
-For overblik og detaljer over OU og User struktur, se Tabel over Brugere.  
+For overblik og detaljer over OU og User struktur, se [Tabel over Brugere](#Bruger-tabel). [Bilag](#Active-Directory-opsætning)
 
-Via Group Policy Management er der oprettet nogle gruppepolitikker til Folder Redirection samt fælles netværksdrev og netværksdrev til afdelingerne. Se struktureren i gruppepolitikkerne i bilagende.
+Via Group Policy Management er der oprettet nogle gruppepolitikker til Folder Redirection samt fælles netværksdrev og netværksdrev til afdelingerne. Se struktureren i gruppepolitikkerne i bilagende. [Bilag](#GPO-Struktur)
 
 ### DHCP konfiguration
 Vi har oprettet et scope med navnet servertek med start IP 192.168.1.1 og slut IP 192.168.1.254. Grunden til at vi ikke har scope fra 192.168.1.0 til 192.168.1.255, er fordi at .0 er vores netværks adresse, og .255 er broadcast adressen i vores scope. Vi har oprettet en eksklusion fra 192.168.1 til 192.168.10. Vi har valgt dette scope, så der er plads til nye servere (192.168.1.3/4/5 osv.), og så der er plads i scopet til at ansætte nye medarbejdere. Lease time er sat til 8 timer, da det er en hel arbejdsdag.
 
 I en rigtig virksomhed ville man ikke vælge denne løsning. I stedet ville man lægge servere, administration og hver afdeling i sit eget V-LAN/subnet.
-Scopet udsender information om IP adressen til default gateway og DNS server, samt DNS Domain name.
+Scopet udsender information om IP adressen til default gateway og DNS server, samt DNS Domain name. [Bilag](#DHCP-konfiguration-bilag)
 
 ### DNS konfiguration
-Vores DNS server er konfigureret til at have en primary forward lookup zone, som vi har kaldt ServertekDNS, som bruges til vores Active Directory. Den har 2 forwarders, som er 8.8.8.8 som er Google DNS server, og så har vi 1.1.1.1 som er en anden offentlig DNS server. 
+Vores DNS server er konfigureret til at have en primary forward lookup zone, som vi har kaldt ServertekDNS, som bruges til vores Active Directory. Den har 2 forwarders, som er 8.8.8.8 som er Google DNS server, og så har vi 1.1.1.1 som er en anden offentlig DNS server. [Bilag](#DNS-konfiguration-bilag)
 
 ### File Server Resource Manager konfiguration  
 File Server Resource Manager er en server rolle, der gør sådan at man kan lave Disk Quota’er på delte mappe. En Disk Quota er en lille service, der bestemmer hvor meget plads der må ligge i den delte mappe, men deler. 
@@ -317,14 +317,15 @@ Følgende afdelinger, som har et netværksdrev:
 - Designer
 - DevOps
 
-Vi har lavet en Disk Quota template, som hedder DepartmentsQuotas, hvor der er blevet sat en max limit på 20GB i mappen. Det ville sige at mappen ikke kan indeholde mere end 20GB.
+Vi har lavet en Disk Quota template, som hedder DepartmentsQuotas, hvor der er blevet sat en max limit på 20GB i mappen. Det ville sige at mappen ikke kan indeholde mere end 20GB. [Bilag](#Opsætning-af-Disk-Quota)
 
 ### WSUS konfiguration  
-Når man opsætter WSUS, bliver man spurgt om hvor man ville gemme WSUS dataerne henne, og der har vi valgt D:/WSUS mappen, det er en mappe der ligger på Data drevet.
+Når man opsætter WSUS, bliver man spurgt om hvor man vil gemme WSUS data henne, og der har vi valgt D:/WSUS mappen, det er en mappe der ligger på Data drevet.
 
-Vi har valgt kun at få Danske og Engelske versioner af Windows 10 opdateringer, da vi ikke har brug for at have alle de andre sprog liggende. Vi har valgt at hente alle Windows opdateringerne ved, så det er alle Windows Server versionerne samt Windows versionerne, samt vi har valgt at hente all update, tools, upgrades, service packs, osv… 
+Vi har valgt kun at få danske og engelske versioner af Windows 10 opdateringer, da vi ikke har brug for at have alle de andre sprog liggende. Første gang vi installerede WSUS, valgte vi at hente alle Windows opdateringerne, dvs. alle Windows Server versioner og Windows versioner, samt vi har valgt at hente alle update, tools, upgrades, service packs, osv (se bilag). Det viste sig at være alt for omfattende, så vi gen-installerede WSUS med kun de mest nødvendige, kritiske opdateringer til Windows 10 og Server 2021.
 
-Vi har valgt at den skal synkronisere én gang hver dag kl. 16.
+Vi har valgt at den skal synkronisere én gang hver dag kl. 16.00. [Bilag](#WSUS-Konfiguration-bilag)
+
 
 ## Beskriv: Sekundær DNS server
 Den sekundære server sættes op med Windows Server 2022, og der installeres DNS server som på den primære server. Serveren navngives DevDNS.
@@ -445,7 +446,7 @@ Vi har arbejdet intenst på at få lavet en delt netværks-PDF-print server.
 Dog kom vi ind i RIGTIG mange problemer, vi har forsøgt med at finde en løsning i Windows Server, samt med en driver hvor vi printede til en fil. 
 Vi har også forsøgt at bruge tredjeparts drivere / programmer for at få det til at virke, dog uden held. 
 Vi brugte også en del tid på at undersøge hvilke porte, der skulle åbnes og oprette de nødvendige firewall rules.
-Vi har brugt følgende tredjeparts drivere / programmer: Bullzip, Win2PDF, BioPDF.
+Vi har brugt følgende tredjeparts drivere / programmer: Bullzip, Win2PDF, BioPDF. [Bilag](#Print-server)
 
 ## Henvisninger
 Sekundær DNS server
