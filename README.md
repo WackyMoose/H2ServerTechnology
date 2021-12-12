@@ -42,7 +42,6 @@
     - [Fordele](#Fordele)
     - [Ulemper](#Ulemper)
 17. [Konklusion](#Konklusion)
-    - [Server](#Server)  
     - [Netværk](#Netværk)  
     - [WSUS](#WSUS)
 18. [Henvisninger](#Henvisninger)  
@@ -344,7 +343,7 @@ Under IPv4, tilføj en static address pool, angiv IPv4 range og genstart Routing
 
 (5) Opsætning af VPN forbindelse. På klient-PC’en, gå ind under Network Connections. UNder fanen VPN, tilføj en ny VPN forbindelse. Angiv de nødvendige informationer, herunder en IP adresse indenfor det angivne range og pre-shared key.
 
-###IPSec
+### IPSec
 Internet Protocol Security (IPSec) er en protokol-suite, der gør det muligt at autentificere hosts og kryptere pakker sendt over et usikkert netværk, og som dermed gør det muligt for to hosts at kommunikere lige så sikkert over internettet, som over et beskyttet LAN. 
 IPSec gør det muligt for to hosts at autentificere sig overfor hinanden, og at kryptere og beskytte forbindelsen mellem to hosts, to netværk, eller mellem en host og et netværk. IPSec bliver benyttet til VPN.
 
@@ -418,12 +417,11 @@ Vi havde en del problemer med opsætning af Microtic Hex routeren og endte med a
 ### WSUS
 Vi har arbejdet intens på at få WSUS til at virke, men trods flere forsøg fik vi det ikke til at lykkedes.
 
-Til at starte med gik alt fint, indtil at vores WSUS Console ikke ville begynde at synkronisere opdateringer uden at crashe. Der gik lidt tid på at finde ud af hvorfor, men efter noget tid tog vi beslutningen om at vi måtte geninstallere WSUS servicen. Efter vi havde geninstalleret WSUS services, fik vi en fejl der sagde at vores database havde en forkert version. Der gik lidt tid på, at finde ud hvorfor den gav den fejl besked, og vi fandt ud af at WSUS benytter en lokal database. Vi måtte installere Microsoft SQL Server Management Studio, og logge ind på den lokale database, WSUS havde oprettet. Det gjorde vi ved at forbinde til: \\.\pipe\microsoft##WID\tsql\query. Inde på den lokale database skulle vi slette en database der hed “SUSDB”, som kan ses på <details><summary>billedet</summary>
+Til at starte med gik alt fint, indtil at vores WSUS Console ikke ville begynde at synkronisere opdateringer uden at crashe. Der gik lidt tid på at finde ud af hvorfor, men efter noget tid tog vi beslutningen om at vi måtte geninstallere WSUS servicen. Efter vi havde geninstalleret WSUS services, fik vi en fejl der sagde at vores database havde en forkert version. Der gik lidt tid på, at finde ud hvorfor den gav den fejl besked, og vi fandt ud af at WSUS benytter en lokal database. Vi måtte installere Microsoft SQL Server Management Studio, og logge ind på den lokale database, WSUS havde oprettet. Det gjorde vi ved at forbinde til: \\.\pipe\microsoft##WID\tsql\query. Inde på den lokale database skulle vi slette en database der hed “SUSDB”, som kan ses på<details><summary>billedet</summary>
    <p>
-
+![NetværksDiagram](https://github.com/WackyMoose/H2ServerTechnology/blob/main/WSUSKonklusion.png)
    </p>
 </details>
-
 
 Efter vi havde slettet databasen, gik vi tilbage til WSUS services, og forsøgte igen at sætte WSUS op denne, gang blev vi mødt af fejlen at vi ikke kunne tilgå “Microsoft Update Service” som ligger ude på nettet et eller andet sted. Her begyndte et træls loop, der gjorde at vi aldrig kom videre med WSUS, da den så igen smed en fejl fordi vi brugte en forkert database version.
 ## Henvisninger
