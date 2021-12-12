@@ -419,7 +419,9 @@ Vi har arbejdet intens på at få WSUS til at virke, men trods flere forsøg fik
 
 Til at starte med gik alt fint, indtil at vores WSUS Console ikke ville begynde at synkronisere opdateringer uden at crashe. Der gik lidt tid på at finde ud af hvorfor, men efter noget tid tog vi beslutningen om at vi måtte geninstallere WSUS servicen. Efter vi havde geninstalleret WSUS services, fik vi en fejl der sagde at vores database havde en forkert version. Der gik lidt tid på, at finde ud hvorfor den gav den fejl besked, og vi fandt ud af at WSUS benytter en lokal database. Vi måtte installere Microsoft SQL Server Management Studio, og logge ind på den lokale database, WSUS havde oprettet. Det gjorde vi ved at forbinde til: \\.\pipe\microsoft##WID\tsql\query. Inde på den lokale database skulle vi slette en database der hed “SUSDB”, som kan ses på <details><summary>billedet</summary>
    <p>
-![NetværksDiagram](https://github.com/WackyMoose/H2ServerTechnology/blob/main/WSUSKonklusion.png)
+      
+![WSUSKonklusion](https://github.com/WackyMoose/H2ServerTechnology/blob/main/WSUSKonklusion.png)
+  
    </p>
 </details>
 
@@ -446,7 +448,7 @@ FTP over SSL
 <details><summary>Her kan man se hvilken MAC adresse WAN interfacet har, samt IP adresse.</summary>
    <p>
       
-![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/MACWan.png)
+![MACWan](https://github.com/WackyMoose/H2ServerTechnology/blob/main/MACWan.png)
 
 </p>
 </details> 
@@ -454,14 +456,14 @@ FTP over SSL
    Samt man kan se at DHCP serveren på routeren er disabled</summary>
    <p>
       
-![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/MACLan.png)
+![MACLan](https://github.com/WackyMoose/H2ServerTechnology/blob/main/MACLan.png)
 
 </p>
 </details> 
 <details><summary>Her kan man se at NAT er enabled på vores router.</summary>
    <p>
       
-![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Nat.png)
+![NAT](https://github.com/WackyMoose/H2ServerTechnology/blob/main/Nat.png)
 
 </p>
 </details> 
@@ -470,28 +472,28 @@ FTP over SSL
 <details><summary>Her trykker man på “Server Certificates”.</summary>
    <p>
       
-![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ServerCertificates.png)
+![ServerCertificates](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ServerCertificates.png)
 
 </p>
 </details>  
 <details><summary>Tryk på “Create Self-Signed Certificate…” ude i højre side.</summary>
    <p>
       
-![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/SelfSignedCertificate.png)
+![SelfSignedCertificate](https://github.com/WackyMoose/H2ServerTechnology/blob/main/SelfSignedCertificate.png)
 
 </p>
 </details> 
 <details><summary>Her skal man give den et navn, samt vælge hvad type certifikat det skal være.</summary>
    <p>
       
-![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/NameCertificate.png)
+![NameCertificate](https://github.com/WackyMoose/H2ServerTechnology/blob/main/NameCertificate.png)
 
 </p>
 </details> 
 <details><summary>Her kan man se at “servertek” certifikatet er blevet oprettet.</summary>
    <p>
       
-![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ServerTek.png)
+![ServerTek](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ServerTek.png)
 
 </p>
 </details> 
@@ -500,21 +502,21 @@ FTP over SSL
 <details><summary>FTP rollen installere gennem Server Manager -> Manage -> Add Roles and Features. Der ligger den under Server Roles og under Web Server (IIS).</summary>
    <p>
       
-![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ServerManager.png)
+![ServerManager](https://github.com/WackyMoose/H2ServerTechnology/blob/main/ServerManager.png)
 
 </p>
 </details>  
 <details><summary>På den side du gerne ville have FTP serveren, skal du højreklikke og tryk på “Add FTP Publishing…”.</summary>
    <p>
       
-![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FTPPublishing.png)
+![FTPPublishing](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FTPPublishing.png)
 
 </p>
 </details> 
 <details><summary>Her skal man vælge hvilken IP adresse, FTP serveren skal køre på, man kan også vælge hvilken port det skal køre, men som standard kør det på port 21. Samt vælger det SSL certifikat der blevet lavet tidligere.</summary>
    <p>
       
-![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FTPIP.png)
+![FTPIP](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FTPIP.png)
 
 </p>
 </details> 
@@ -523,7 +525,7 @@ I Authorization vælger vi “Specified roles or User groups”, og i det input 
 </summary>
    <p>
       
-![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/BasicAuthentication.png)
+![BasicAuthentication](https://github.com/WackyMoose/H2ServerTechnology/blob/main/BasicAuthentication.png)
 
 </p>
 </details> 
@@ -531,7 +533,7 @@ I Authorization vælger vi “Specified roles or User groups”, og i det input 
 <details><summary>Her kan man se at der er adgang til FTP serveren, og man kan se websites filer.</summary>
    <p>
       
-![Router login interface](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FTPWorking.png)
+![FTPWorking](https://github.com/WackyMoose/H2ServerTechnology/blob/main/FTPWorking.png)
 
 </p>
 </details> 
