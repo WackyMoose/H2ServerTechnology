@@ -27,25 +27,26 @@
    - [WSUS konfiguration](#WSUS-konfiguration)  
 10. [Beskriv: Sekundær DNS server](#Beskriv-Sekundær-DNS-server)  
 11. [Beskriv: Remote Desktop adgang til serverne](#Beskriv-Remote-Desktop-adgang-til-serverne)  
-12. [Beskriv: VPN opsætning til hjemmearbejdsplads](#Beskriv-VPN-opsætning-til-hjemmearbejdsplads)  
-13. [Beskriv: Adgang til website med FTP over SSL](#Beskriv-Adgang-til-website-med-FTP-over-SSL)
-14. [Forklaring af DDNS-NetBIOS-WINS-LLMNR](#Forklaring-af-DDNS-NetBIOS-WINS-LLMNR)  
+12. [Beskriv: L2TP over IPSec VPN forbindelse](#Beskriv-L2TP-over-IPSec-VPN-forbindelse)
+13. [Beskriv: VPN opsætning til hjemmearbejdsplads](#Beskriv-VPN-opsætning-til-hjemmearbejdsplads)  
+14. [Beskriv: Adgang til website med FTP over SSL](#Beskriv-Adgang-til-website-med-FTP-over-SSL)
+15. [Forklaring af DDNS-NetBIOS-WINS-LLMNR](#Forklaring-af-DDNS-NetBIOS-WINS-LLMNR)  
     - [DDNS](#DDNS)  
     - [NetBIOS](#NetBIOS)  
     - [WINS](#WINS)  
     - [LLMNR](#LLMNR)  
-15. [Forklar: Cloud-baseret serverdrift](#Forklar-Cloud-baseret-serverdrift)
+16. [Forklar: Cloud-baseret serverdrift](#Forklar-Cloud-baseret-serverdrift)
     - [Infrastructure as a service (IaaS)](#Infrastructure-as-a-service-IaaS)
     - [Platform as a service (PaaS) / Serverless](#Platform-as-a-service-PaaS--Serverless)
     - [Software as a service (SaaS)  ](#Software-as-a-service-SaaS)
     - [Fordele](#Fordele)
     - [Ulemper](#Ulemper)
-16. [Konklusion](#Konklusion)
+17. [Konklusion](#Konklusion)
     - [Server](#Server)  
     - [Netværk](#Netværk)  
     - [WSUS](#WSUS)
-17. [Henvisninger](#Henvisninger)  
-18. [Bilag](#Bilag)
+18. [Henvisninger](#Henvisninger)  
+19. [Bilag](#Bilag)
     - [Opsætning af Router](#Opsætning-af-Router)
     - [Opretning af SSL certifikat](#Opretning-af-SSL-certifikat)
     - [Opsætning af FTP server med SSL](#Opsætning-af-FTP-server-med-SSL)
@@ -270,43 +271,50 @@ Ud fra vores 1TB HDD, vi havde i serveren, har vi delt den op i 4 partitioner;
 - Backup (B:)  
 - UserFolders$ (U:)  
 Public og UserFolders$ er begge shared drives.
- 
-Public drevet er et drev det bliver sendt ud til klienterne via en gruppepolitik, og er et fælles drev for alle brugerne.
 
-UserFolders$ drevet er det drev vi har sat Folder Redirection op til at køre på. Det er det drev, hvor alle klienternes mapper ligger i.
+Public drevet bliver delt med klienterne via en gruppepolitik og fungerer som fællesdrev for alle brugere.
 
-Data drevet er det drev, som indeholder WSUS mappen, alle afdelings mapperne, som er shared mapper, hvor det kun er afdelingen der har adgang til mappen, som er sat med NTFS rettigheder.
+Folder Redirection er sat op på UserFolders$ drevet, hvor alle brugernes private mapper ligger. NTFS-rettigheder kopieres også over, så admin ikke kan se indholdet.
+
+Backup drevet er en kopi af UserFolders$ drevet, hvor ALT bliver kopieret med over, sådan at det er en tro kopi af UserFolders$ og alle brugerne private mapper, som bliver syncet med Folder Redirection.
+
+Data drevet indeholder WSUS mappen, alle afdelings mapperne, som er shared mapper, hvor det kun er afdelingen der har adgang til mappen, som er sat med NTFS rettigheder.
 
 ### Active Directory konfiguration
-Vores domæne i vores Active Directory hedder servertek.local. 
-Directory Services Restore Mode password (DSRM): DataIT2021!
-Vi har konfigureret en række gruppepolitikker for folder redirection og netværksdrev til hver afdeling, 
+Active Directory forest hedder servertek.local. Directory Services Restore Mode password (DSRM) er DataIT2021!
+Via Active Directory Administrative Center er der oprettet en OU i vores servertek.local forest.  
+For overblik og detaljer over OU og User struktur, se Tabel over Brugere.  
+
+Via Group Policy Management er der oprettet nogle gruppepolitikker til Folder Redirection samt fælles netværksdrev og netværksdrev til afdelingerne. Se struktureren i gruppepolitikkerne i bilagende.
 
 ### DHCP konfiguration
 Vi har oprettet et scope med navnet servertek med start IP 192.168.1.1 og slut IP 192.168.1.254. Grunden til at vi ikke har scope fra 192.168.1.0 til 192.168.1.255, er fordi at .0 er vores netværks adresse, og .255 er broadcast adressen i vores scope. Vi har oprettet en eksklusion fra 192.168.1 til 192.168.10. Vi har valgt dette scope, så der er plads til nye servere (192.168.1.3/4/5 osv.), og så der er plads i scopet til at ansætte nye medarbejdere. Lease time er sat til 8 timer, da det er en hel arbejdsdag.
 
 I en rigtig virksomhed ville man ikke vælge denne løsning. I stedet ville man lægge servere, administration og hver afdeling i sit eget V-LAN/subnet.
-Scopet udsender information om IP adressen til default gateway og DNS server, samt DNS Domain name. 
+Scopet udsender information om IP adressen til default gateway og DNS server, samt DNS Domain name.
 
 ### DNS konfiguration
-Forwarders er sat til at være 8.8.8.8 (Googles DNS) og 1.1.1.1, 
+Vores DNS server er konfigureret til at have en primary forward lookup zone, som vi har kaldt ServertekDNS, som bruges til vores Active Directory. Den har 2 forwarders, som er 8.8.8.8 som er Google DNS server, og så har vi 1.1.1.1 som er en anden offentlig DNS server. 
 
 ### File Server Resource Manager konfiguration  
 File Server Resource Manager er en server rolle, der gør sådan at man kan lave Disk Quota’er på delte mappe. En Disk Quota er en lille service, der bestemmer hvor meget plads der må ligge i den delte mappe, men deler. 
-Vi har lavet 4 afdelinger, som hver har deres egne netværksdrev, som brugerne får via en GPO når de logger ind.  
-Følgende afdelinger, som har et netværksdrev:  
-Administration  
-Developer  
-Designer  
-DevOps  
+Vi har lavet 4 afdelinger, som hver har deres egne netværksdrev, som brugerne får via en GPO når de logger ind. 
+Følgende afdelinger, som har et netværksdrev:
+- Administration
+- Developer
+- Designer
+- DevOps
 
-Vi har lavet en Disk Quota template, som hedder DepartmentsQuotas, hvor der er blevet sat en max limit på 20GB i mappen. Det ville sige at mappen ikke kan indeholde mere end 20GB
+Vi har lavet en Disk Quota template, som hedder DepartmentsQuotas, hvor der er blevet sat en max limit på 20GB i mappen. Det ville sige at mappen ikke kan indeholde mere end 20GB.
 
 ### WSUS konfiguration  
+Når man opsætter WSUS, bliver man spurgt om hvor man ville gemme WSUS dataerne henne, og der har vi valgt D:/WSUS mappen, det er en mappe der ligger på Data drevet.
+
+Vi har valgt kun at få Danske og Engelske versioner af Windows 10 opdateringer, da vi ikke har brug for at have alle de andre sprog liggende. Vi har valgt at hente alle Windows opdateringerne ved, så det er alle Windows Server versionerne samt Windows versionerne, samt vi har valgt at hente all update, tools, upgrades, service packs, osv… 
+
+Vi har valgt at den skal synkronisere én gang hver dag kl. 16.
 
 ## Beskriv: Sekundær DNS server
-“Beskriv hvorledes man opsættes yderligere én server, der skal fungere som sekundær DNS-server. Serveren kaldes DevDNS. Den sekundære DNS-server skal indeholde en subdomain zone der kaldes dev.servertek.local, ligeledes beskrives hvorledes man opretter en DNS-delegering til dev.servertek.local på den primære domain-server.”
-
 Den sekundære server sættes op med Windows Server 2022, og der installeres DNS server som på den primære server. Serveren navngives DevDNS.
 
 På den primære server, kan man i DNS manager højreklikke på DNS rod-ikonet og vælge Connect to DNS server… og indtaste navnet dev.servertek.local. Så er den sekundære DNS server tilføjet stifinder panelet.
@@ -316,17 +324,32 @@ På den primære server skal DNS zone transfer slås til: I DNS manager, højrek
 På den sekundære server, I DNS manager højreklikkes på mappen DevDns/Forward lookup zones. Vælg New zone og Secondary zone, hvorefter navnet på den nye zone indtastes (dev.servertek.local). Derefter angives master DNS serveren, hvis IP indtastes. Derefter højreklik DevDNS/Forward lookup og vælg Transfer from master, hvorefter der hentes en read-only kopi af alle forward adresser fra den primære DNS server.
 
 ## Beskriv: Remote Desktop adgang til serverne
-Inde på Server Manager, under “Local Server”, skal man enable den der hedder “Remote Desktop”. 
-Den knap åbner et nyt vindue, hvor der er en sektion der hedder “Remote Desktop”, du kan vælge at slå det til. Som standard står den til “Don’t allow remote connections to this computer”, hvilket betyder at man ikke kan forbinde sig til den med Remote Desktop.
+Inde på Server Manager, under “Local Server”, skal man enable den der hedder “Remote Desktop”. Den knap åbner et nyt vindue, hvor der er en sektion der hedder “Remote Desktop”, du kan vælge at slå det til. Som standard står den til “Don’t allow remote connections to this computer”, hvilket betyder at man ikke kan forbinde sig til den med Remote Desktop.
 
 Tryk på “Allow remote connections to this computer”, for at slå det til. Derefter skal du vælge hvilke brugere/grupper der skal have adgang til at kunne tilgå serveren via Remote Desktop. Derinde ville man normalt lave en gruppe som alle brugerne, der skal have adgang til Remote Desktop, ligger i. 
 
 Derefter kan man teste det ved at gå på klientens computer, og åbne “Remote Desktop Connection“. I det vindue, skal man skrive IP adressen ind på den server man gerne ville tilgå. Her kan man gør det nemt for ens medarbejdere, ved at lave et domænenavn til IP adressen, sådan at man ikke behøver at skulle huske på IP adressen hver gang.
 
-## Beskriv: VPN opsætning til hjemmearbejdsplads
+## Beskriv: L2TP over IPSec VPN forbindelse
+Som medarbejder har man behov for at kunne oprette en sikker forbindelse til sin virksomheds LAN over det usikre internet, f.eks. når man arbejder hjemmefra. Dette gøres med en Virtual Private Network (VPN) forbindelse, som beskrevet her. Da dette ikke er en installationsvejledning, beskrives her kun de vigtigste hovedpunkter.
+
+(1) Rollen Remote Access installeres på serveren. Dette gøres i Server Manager med Role and feature installation wizard. Følg guiden. Under Select role Services, sæt flueben ved DirectAccess and VPN, kør installationen.
+
+(2) konfigurer L2TP over IPSec. På serveren, vælg Tools og Routing and Remote Access Console. Højreklik på serveren i stifinderen til venstre og vælg Configure and Enable Routing and Remote Access. Følg guiden. Vælg Custom configuration, VPN access og start servicen.
+
+(3) Konfigurer pre-shared key for IPSec autentificering. L2TP over IPSec VPN autentificerer de to hosts/netværk med en såkaldt pre-shared key. På serveren, vælg Tools og Routing and Remote Access Console. Højreklik på serveren i stifinderen til venstre og vælg Properties. Under fanen Security, vælg Allow custom IPSec Policy for L2TP/IKEv2 Connection og angiv en stærk pre-shared key.
+Under IPv4, tilføj en static address pool, angiv IPv4 range og genstart Routing and Remote Access servicen.
+
+(4) Tillad Dial-in Acces for udvalgte brugere. I Server Manager, under den udvalgte brugers properties, gå ind under Dial-in fanen,vælg Allow access og apply.
+
+(5) Opsætning af VPN forbindelse. På klient-PC’en, gå ind under Network Connections. UNder fanen VPN, tilføj en ny VPN forbindelse. Angiv de nødvendige informationer, herunder en IP adresse indenfor det angivne range og pre-shared key.
+
+###IPSec
+Internet Protocol Security (IPSec) er en protokol-suite, der gør det muligt at autentificere hosts og kryptere pakker sendt over et usikkert netværk, og som dermed gør det muligt for to hosts at kommunikere lige så sikkert over internettet, som over et beskyttet LAN. 
+IPSec gør det muligt for to hosts at autentificere sig overfor hinanden, og at kryptere og beskytte forbindelsen mellem to hosts, to netværk, eller mellem en host og et netværk. IPSec bliver benyttet til VPN.
 
 ## Beskriv: Adgang til website med FTP over SSL
-Først skal der genereres et certifikat. I IIS manager, klik server certificate ikonet og vælg Create self-signed certificate… i fanen til højre. I fanen Specify Friendly Name, skriv navnet på certifikatet og vælg Web Hosting i drop down menuen1.
+Først skal der genereres et certifikat. I IIS manager, klik server certificate ikonet og vælg Create self-signed certificate… i fanen til højre. I fanen Specify Friendly Name, skriv navnet på certifikatet og vælg Web Hosting i drop down menuen.
 
 Installer serverrollen Web Server (IIS) / FTP Server. I IIS manager, højreklik på websitet og vælg Add FTP publishing… Under fanen Binding and SSL settings, klik radioknappen Require SSL og vælg SSL Certifikatet.
 
@@ -348,26 +371,27 @@ Windows Internet Name Service (WINS) er en service der hjalp windows med at over
 Link-Local Multicast Name Resolution (LLMNR), er en protokol der er baseret på DNS packet format, dette gør det muligt for både IPv4 og IPv6 at oversætte navne til IP adresser uden en DNS server.
 
 ## Forklar: Cloud-baseret serverdrift
-I dag findes der en hastigt voksende mængde af cloudbaserede serviceudbydere, der tilbyder en bred vifte af produkter. F.eks. er det ikke længere almindeligt at have en fysisk mail-server stående hjemme eller på virksomheden, fordi den service i dag ligger i skyen som en cloud service. Eksempler på cloud-serviceudbydere kunne være Amazon Web Services, Microsoft Azure og Google Cloud, men der findes mange flere, og antallet af serviceudbydere vokser hastigt.
+I dag findes der en hastigt voksende mængde af cloudbaserede serviceudbydere, der tilbyder en bred vifte af produkter. De gør det muligt at lægge data, beregningsopgaver, software, samt servere, netværk og anden infrastruktur op i skyen, i stedet for at have det stående fysisk på virksomhedens adresse. Eksempler på cloud-serviceudbydere kunne være Amazon Web Services, Microsoft Azure og Google Cloud, men der findes mange flere, og antallet af serviceudbydere vokser hastigt.
 
 Cloud services falder i følgende hovedkategorier:
  
 ### Infrastructure as a service (IaaS)  
 Tidligere var virksomheder nødt til at opsætte fysiske servere og klienter i et lokalt netværk af routere og switches, hvilket medførte udgifter til plads, strøm, nettrafik og løbende vedligeholdelse og skalering. 
-I dag vælger mange at bruge cloudbaseret serverdrift eller IaaS i stedet, hvilket vil sige, at hele virksomhedens infrastruktur ligger tilgængeligt virtuelt i skyen. Brugeren skal ikke forholde sig til tekniske problemer, skalering eller vedligehold, det klarer cloudservicens medarbejdere.
+I dag vælger mange at bruge cloudbaseret serverdrift eller IaaS i stedet, hvilket vil sige, at hele virksomhedens infrastruktur ligger tilgængeligt virtuelt i skyen. 
+Brugeren skal ikke forholde sig til tekniske problemer, skalering eller vedligehold, det klarer cloudservicens medarbejdere.
 ### Platform as a service (PaaS) / Serverless
 PaaS tilbyder kunderne en web-platform, hvor de hurtigt kan komme i gang med at udvikle software, websites eller apps uden at skulle bekymre sig om opsætning og konfigurering af udviklingsmiljøet. 
-Kunden kan behandle store filer og benytte CPU- og RAM-krævende software på en lille laptop, da alt det tunge computing arbejde foregår i skyen. Service- udbyderen sørger for opsætning og skalering af hardware, så kunden kan fokusere på at udvikle.
+Kunden kan behandle store filer og benytte CPU- og RAM-krævende software på en lille laptop, da alt det tunge beregningsarbejde foregår i skyen. 
+Service- udbyderen sørger for opsætning og skalering af hardware, så kunden kan fokusere på at udvikle.
 ### Software as a service (SaaS)  
-Tidligere installerede man software lokalt på PC’en via et fysisk medie som f.eks. en diskette eller CD-ROM, som man havde købt i en butik. 
-I dag er det mere almindeligt at benytte SaaS, dvs. at man abonnerer på adgang til softwaren og betaler pr. brug eller via et månedligt abonnement. 
-Softwaren hentes over nettet og installeres og opdateres automatisk. 
+Tidligere installerede man software lokalt på PC’en via et fysisk medie som f.eks. en diskette eller CD-ROM, som man havde købt i en butik. I dag er det mere almindeligt at benytte SaaS, dvs. at man abonnerer på adgang til softwaren og betaler pr. brug eller via et månedligt abonnement. 
+Softwaren hentes over nettet og installeres automatisk eller kører direkte i browseren via javascript eller det meget hurtige webassembly. 
 Eksempler på software, der tidligere skulle installeres fysisk men som nu er SaaS kunne være Adobe Photoshop, der i dag er en del af Creative Cloud, eller platformen Steam, hvor man kan købe og installere spil over nettet, der tidligere blev solgt på DVD-ROM.
+
 ### Fordele  
 Man er hurtigt i gang. Det kræver kun en subscription og nogle museklik at opsætte en virtuel cloud infrastruktur, som det ville tage lang tid at opsætte fysisk.
 
 Fleksibel skalering. Det er nemt at skalere sin infrastruktur op (flere CPU kerner, mere RAM, større båndbredde osv.) eller ud (flere virtuelle maskiner).
-
 Ingen hardware. Det kan være meget dyrt og tidskrævende at opsætte og køre et serverrum med køling, og det er dyrt at ansætte IT folk til at vedligeholde serveren. Alt det undgår man ved at vælge en IaaS service.
 
 Nem adgang. Da servicen ligger i skyen kan den tilgås overalt i verden.
@@ -375,14 +399,33 @@ Nem adgang. Da servicen ligger i skyen kan den tilgås overalt i verden.
 ### Ulemper  
 Når man først har valgt en cloud service, kan det være meget besværligt og tidskrævende at flytte til en anden serviceudbyder.
 
-Tab af kontrol over data. Når man bruger en cloud service, vil data sandsynligvis blive transporteret på tværs af landegrænser og kontinenter, hvor der gælder forskellig lovgivning omkring datasikkerhed. Derfor kan det blive svært at sikre, at kundernes data ikke tilgås eller sælges til tredjepart.
+Tab af kontrol over data. Når man bruger en cloud service, vil data sandsynligvis blive transporteret på tværs af landegrænser og kontinenter, hvor der gælder forskellig lovgivning omkring datasikkerhed. Derfor kan det blive svært at sikre, at kundernes data ikke tilgås af andre eller sælges til tredjepart.
 
 ## Konklusion
-### Server
+Vi har sat en server op med Windows Server 2022 Evalution og følgende serverroller: 
+- Active Directory Domain Service
+- DNS server
+- DHCP server
+- IIS server. 
+- WSUS
+- Print server
+
+Alle OU’er og brugere er oprettet som beskrevet i opgaven. Folder Redirection er sat op, sådan at brugerne mapper ligge oppe på serveren, og til enhver tid skifte PC, uden at miste noget. Vi har også sat et Public netværksdrev op, som alle brugere i domænet har adgang til, samt vi har lavet afdelings netværksdrev hvor vi har sat passende NTFS og Share-rettigheder op. Shadow Copy blev sat op på UserFolders$ drevet som en Back-up løsning.
+
+I det store hele fik vi løst alle opgaver, på nær følgende ting:
 ### Netværk
-Vi havde en del problemer med opsætning af Microtic Hex routeren og endte med at bytte den til en Linksys e900. Vi havde en snak med SKP folkene, der fortalte at de fik rigtig mange klager over Microtik routerne.
+Vi havde en del problemer med opsætning af Microtic Hex routeren og endte med at bytte den til en Linksys e900. Vi havde en snak med SKP folkene, der fortalte at de fik rigtig mange klager over Microtik routerne. Linksys routeren virkede fint hele ugen.
 ### WSUS
-Vi har arbejdet intens på at få WSUS til at virke, men efter rigtig mange forsøg og uden held, er det ikke lykkedes os at få det til at fungere. Vi fik 
+Vi har arbejdet intens på at få WSUS til at virke, men trods flere forsøg fik vi det ikke til at lykkedes.
+
+Til at starte med gik alt fint, indtil at vores WSUS Console ikke ville begynde at synkronisere opdateringer uden at crashe. Der gik lidt tid på at finde ud af hvorfor, men efter noget tid tog vi beslutningen om at vi måtte geninstallere WSUS servicen. Efter vi havde geninstalleret WSUS services, fik vi en fejl der sagde at vores database havde en forkert version. Der gik lidt tid på, at finde ud hvorfor den gav den fejl besked, og vi fandt ud af at WSUS benytter en lokal database. Vi måtte installere Microsoft SQL Server Management Studio, og logge ind på den lokale database, WSUS havde oprettet. Det gjorde vi ved at forbinde til: \\.\pipe\microsoft##WID\tsql\query. Inde på den lokale database skulle vi slette en database der hed “SUSDB”, som kan ses på <details><summary>billedet</summary>
+   <p>
+
+   </p>
+</details>
+
+
+Efter vi havde slettet databasen, gik vi tilbage til WSUS services, og forsøgte igen at sætte WSUS op denne, gang blev vi mødt af fejlen at vi ikke kunne tilgå “Microsoft Update Service” som ligger ude på nettet et eller andet sted. Her begyndte et træls loop, der gjorde at vi aldrig kom videre med WSUS, da den så igen smed en fejl fordi vi brugte en forkert database version.
 ## Henvisninger
 Sekundær DNS server
 https://www.youtube.com/watch?v=LmpuiiQ_GS4
